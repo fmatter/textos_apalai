@@ -1,0 +1,23 @@
+{
+	"ner1-013": {
+		"Translated_Text": [0]
+	},
+	"ner1-017": {
+		"Translated_Text": [0]
+	},
+	"ner1-027": {
+		"Translated_Text": [0]
+	},
+	"ner1-007": {
+		"trash": [-1]
+	},
+	"ner1-026": {
+		"Primary_Text": [0, 3],
+		"Analyzed_Word": [1, 4],
+		"Gloss": [2, 5],
+		"gramm": [6]
+	},
+	"ner1-041": {
+		"Translated_Text": [4, 5]
+	}
+}

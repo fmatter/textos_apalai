@@ -1,0 +1,18 @@
+[
+    {"coins": [["yto", "ir"]], "meaning": "go"},
+    {"coins": [["eh", "ficar"], ["exi", "estar"]], "meaning": "be-2"},
+    {"coins": [["at-apiaka", "reflex-dividir"]], "meaning": "divide_up"},
+    {
+        "coins": [["a", "dizer"], ["a", "ser_estar"], ["kynako", "disse"]],
+        "meaning": "be-1",
+    },
+    {"coins": [["eporehka", "chegar"]], "meaning": "arrive"},
+    {"coins": [["ekureh", "falhar"]], "meaning": "fail"},
+    {"coins": [["emeh", "amanhecer"]], "meaning": "spend_night"},
+    {"coins": [["oturupo", "perguntar"]], "meaning": "ask"},
+    {"coins": [["oeh", "vir"], ["oepy", "vir"], ["ooeh", "vir"]], "meaning": "come"},
+    {"coins": [["otuh", "comer"]], "meaning": "eat"},
+    {"coins": [["otyryhka", "desembarcar"]], "meaning": "land"},
+    {"coins": [["etuarima", "sofrer"]], "meaning": "suffer"},
+    {"coins": [["ka", "dizer_fazer"]], "meaning": "say"},
+]
