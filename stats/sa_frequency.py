@@ -14,14 +14,14 @@ word_count = 0
 morph_count = 0
 
 found_morphemes = {}
-test = Corpus.from_path("../cldf/cldf-metadata.json")
+test = Corpus.from_path("../cldf/metadata_full.json")
 test.check_glosses()
 for igt in test:
     for word in igt.glossed_morphemes:
         word_count += 1
         for i, (obj, gloss) in enumerate(word):
             morph_count += 1
-            if obj in ["at"] and gloss in ["reflex"]:
+            if obj in ["at", "os", "e"] and gloss in ["reflex", "reflx_se", "reflx"]:
                 word[i+1] = list(word[i+1])
                 word[i+1][0] = obj + "-" + word[i+1][0]
                 word[i+1][1] = gloss + "-" + word[i+1][1]

@@ -1,9 +1,9 @@
 [
     {"forms": [["yto", "ir"]], "meaning": "go", "form": "ɨto"},
-    {"forms": [["eh", "ficar"], ["exi", "estar"]], "meaning": "be-2", "form": "eʃi"},
+    {"forms": [["eh", "ficar"], ["exi", "estar"], ["exi", "ficar"], ["eh", "surpresa"]], "meaning": "be-2", "form": "eʃi"},
     {"forms": [["at-apiaka", "reflex-dividir"]], "meaning": "divide_up", "form": "at-apiaka"},
     {
-        "forms": [["a", "dizer"], ["a", "ser_estar"], ["kynako", "disse"]],
+        "forms": [["a", "dizer"], ["a", "ser_estar"], ["kynako", "disse"], ["ase", "aux"]],
         "meaning": "be-1", "form": "a"
     },
     {"forms": [["eporehka", "chegar"]], "meaning": "arrive", "form": "e-poreʔka"},
@@ -15,4 +15,9 @@
     {"forms": [["otyryhka", "desembarcar"]], "meaning": "land", "form": "ot-ɨrɨʔka"},
     {"forms": [["etuarima", "sofrer"]], "meaning": "suffer", "form": "e-tuarima"},
     {"forms": [["ka", "dizer_fazer"]], "meaning": "say", "form": "ka"},
+    {"forms": [["os-epory", "reflx_se-encontrar"]], "meaning": "meet", "form": "os-eporɨ"},
+    {"forms": [["epuka", "cair"]], "meaning": "fall", "form": "e-puka"},
+    {"forms": [["eunohnõko", "***"]], "meaning": "laugh", "form": "e-unopɨ"},
+    {"forms": [["e-metyka", "reflx-tirou_a_tanga"]], "meaning": "lose loincloth", "form": "e-metɨka"},
+    {"forms": [["os-enakünuh", "reflx_se-engasgou"], ["os-enakunuh", "reflx_se-engasgou"]], "meaning": "choke", "form": "os-enakũnuʔ"},
 ]
