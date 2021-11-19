@@ -6,15 +6,19 @@ import json
 import pandas as pd
 from segments import Tokenizer, Profile
 import unicodedata
-from cldfbench import CLDFSpec
+from cldfbench import CLDFSpec, CLDFWriter
 from cldfbench import Dataset as BaseDataset
 import yaml
 
 
-class KoehnPDFParser:
-    def __init__(self):
 
-        self.line_mapping = json.load(open("etc/line_mapping.json"))
+class Dataset(BaseDataset):
+    dir = pathlib.Path(__file__).parent
+    id = "textos_apalai"
+    
+    def parse_pdf(self):
+
+        line_mapping = json.load(open("etc/line_mapping.json"))
         line_moves = json.load(open("etc/line_movements.json"))
         line_splits = json.load(open("etc/line_splits.json"))
         col_mapping = json.load(open("etc/col_mapping.json"))
@@ -108,10 +112,10 @@ class KoehnPDFParser:
                 print("Input:")
                 print_partial_analysis(unit_raw, unit, keys)
 
-            if unit["ID"] in self.line_mapping:
+            if unit["ID"] in line_mapping:
                 target_lines = {
                     line: col_mapping[key]
-                    for key, sublist in self.line_mapping[unit["ID"]].items()
+                    for key, sublist in line_mapping[unit["ID"]].items()
                     for line in sublist
                 }
                 for line, key in dict(
@@ -187,6 +191,7 @@ class KoehnPDFParser:
                 text_label = metadata["Label"]
             else:
                 text_label = text
+            text_length = 0
             text_folder = text + "_pages"
             page_map = {}
             for text_page, total_page in enumerate(
@@ -244,22 +249,49 @@ class KoehnPDFParser:
                                 key = col_mapping[key]
                                 for position, add_text in inserts.items():
                                     pos = int(position)
-                                    print(f"""Inserting {add_text} in {key} field at position {pos} in unit {parsed_unit["ID"]}""")
+                                    # print(f"""Inserting {add_text} in {key} field at position {pos} in unit {parsed_unit["ID"]}""")
                                     parsed_unit[key] = parsed_unit[key][:pos] + add_text + parsed_unit[key][pos:]
                         if unit_id in replacements:
                             for key, repl in replacements[unit_id].items():
                                 for a, b in repl.items():
-                                    print(f"Replacing {a} with {b} in {key} in {unit_id}")
+                                    # print(f"Replacing {a} with {b} in {key} in {unit_id}")
                                     parsed_unit[col_mapping[key]] = parsed_unit[col_mapping[key]].replace(a, b)
-                                    print(parsed_unit)
                         if "Primary_Text" in parsed_unit:
                             parsed_unit["pnm"] = ipaify(parsed_unit["Primary_Text"])
                             if "Analyzed_Word" in parsed_unit:
                                 parsed_unit["pnm_parsed"] = ipaify(
                                     parsed_unit["Analyzed_Word"], obj=True
                                 )
+                                text_length += 1
                                 parsed.append(parsed_unit)
+            texts[text]["length"] = text_length
 
+        def add_sample(cand, indices, lim):
+            cand = abs(cand)
+            if 0 < cand < lim and cand not in indices:
+                indices.append(cand)
+            return indices
+
+        def get_samples(text, lim):
+            indices = []
+            mod = 0
+            while len(indices) < 7:
+                mods = [
+                    lambda x: lim-x,
+                    lambda x: (lim-x)//2,
+                    lambda x: (lim-x)//2+5,
+                    lambda x: (lim-x)+10,
+                    lambda x: (lim-x)//3,
+                    lambda x: (lim-x)//3+2,
+                ]
+                for c in text:
+                    indices = add_sample(mods[mod](ord(c)), indices, lim)
+                if mod >= len(mods)-1:
+                    mod = 0
+                else:
+                    mod += 1
+            return indices
+            
         df = pd.DataFrame.from_dict(parsed)
         df["Language_ID"] = "apa"
         df["Analyzed_Word"] = df["Analyzed_Word"].apply(
@@ -268,24 +300,35 @@ class KoehnPDFParser:
         df["Gloss"] = df["Gloss"].apply(lambda x: "\t".join(x.split(" ")))
         df.rename(columns={"trash": "Comments", "ID": "Example_ID"}, inplace=True)
         df.index.name = "ID"
-        df.to_csv(os.path.join("cldf", "examples.csv"))
+        df.to_csv(os.path.join("cldf", "examples_full.csv"))
         sample_list = ["ner1-008", "ner1-025"]
+        for text, data in texts.items():
+            if "length" in data:
+                samples = get_samples(text, data["length"])
+                sample_list.extend([f"{text}-{str(x).zfill(3)}" for x in samples])
         df[df["Example_ID"].isin(sample_list)].to_csv(
-            os.path.join("cldf", "examples_sample.csv")
+            os.path.join("cldf", "examples.csv")
         )
         with open("etc/unit_check.json", "w") as outfile:
             json.dump(unit_check, outfile, indent=2)
-
-
-class Dataset(BaseDataset):
-    dir = pathlib.Path(__file__).parent
-    id = "textos_apalai"
-
+            
     def cldf_specs(self):  # A dataset must declare all CLDF sets it creates.
-        return CLDFSpec(
-            dir=self.cldf_dir, module="Generic", metadata_fname="cldf-metadata.json"
-        )
-        return super().cldf_specs()
+        return {
+            'full': CLDFSpec(
+                dir=self.cldf_dir,
+                module='Generic',
+                data_fnames={'ExampleTable': 'examples_full.csv'},
+                writer_cls=CLDFWriter,
+                metadata_fname="metadata_full.json"
+            ),
+            'sampled': CLDFSpec(
+                dir=self.cldf_dir,
+                module='Generic',
+                data_fnames={'ExampleTable': 'examples.csv'},
+                writer_cls=CLDFWriter,
+                metadata_fname="metadata.json"
+            ),
+        }
 
     def cmd_download(self, args):
         pass
@@ -296,51 +339,59 @@ class Dataset(BaseDataset):
         >>> self.raw_dir.download(url, fname)
         """
         # pass
-
+    
     def cmd_makecldf(self, args):
-        args.writer.cldf.add_component("LanguageTable")
-        args.writer.cldf.add_component(
-            "ExampleTable",
-            "Text_ID",
-            {"name": "Sentence_Number", "datatype": "integer"},
-            {"name": "Phrase_Number", "datatype": "integer"},
-        )
-        args.writer.cldf.remove_columns("ExampleTable", "Gloss", "Analyzed_Word")
-        args.writer.cldf.add_columns("ExampleTable",
-             {
-                "dc:description": "The sequence of words of the primary text to be aligned with glosses",
-                "dc:extent": "multivalued",
-                "datatype": "string",
-                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#analyzedWord",
-                "required": False,
-                "separator": "\t",
-                "name": "Analyzed_Word",
-            },
-            {
-                "dc:description": "The sequence of glosses aligned with the words of the primary text",
-                "dc:extent": "multivalued",
-                "datatype": "string",
-                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#gloss",
-                "required": False,
-                "separator": "\t",
-                "name": "Gloss",
-            })
-        args.writer.cldf.add_table("texts.csv", "ID", "Title")
-        args.writer.cldf.add_foreign_key("ExampleTable", "Text_ID", "texts.csv", "ID")
+        with self.cldf_writer(args, cldf_spec="sampled") as writer:
+            writer.cldf.add_component("LanguageTable")
 
-        args.writer.objects["LanguageTable"].append(
-            {"ID": "apa", "Name": "Apalaí", "Glottocode": "apal1257"}
-        )
-
-        for i, row in pd.read_csv("etc/texts.csv").iterrows():
-            args.writer.objects["texts.csv"].append(
-                {"ID": row["ID"], "Title": row["Title"]}
+            writer.cldf.remove_columns("ExampleTable", "Gloss", "Analyzed_Word")
+            writer.cldf.add_columns("ExampleTable",
+                "Text_ID",
+                "Example_ID",
+                "Comments",
+                "gramm",
+                "pnm",
+                "page",
+                "pnm_parsed",
+                {"name": "Sentence_Number", "datatype": "integer"},
+                {"name": "Phrase_Number", "datatype": "integer"},
+                 {
+                    "dc:description": "The sequence of words of the primary text to be aligned with glosses",
+                    "dc:extent": "multivalued",
+                    "datatype": "string",
+                    "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#analyzedWord",
+                    "required": False,
+                    "separator": "\t",
+                    "name": "Analyzed_Word",
+                },
+                {
+                    "dc:description": "The sequence of glosses aligned with the words of the primary text",
+                    "dc:extent": "multivalued",
+                    "datatype": "string",
+                    "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#gloss",
+                    "required": False,
+                    "separator": "\t",
+                    "name": "Gloss",
+                })
+            writer.cldf.add_table("texts.csv", "ID", "Title")
+            writer.cldf.add_foreign_key("ExampleTable", "Text_ID", "texts.csv", "ID")
+            
+            writer.objects["LanguageTable"].append(
+                {"ID": "apa", "Name": "Apalaí", "Glottocode": "apal1257"}
             )
 
-        p = KoehnPDFParser()
+            for i, row in pd.read_csv("etc/texts.csv").iterrows():
+                writer.objects["texts.csv"].append(
+                    {"ID": row["ID"], "Title": row["Title"]}
+                )
+            LanguageTable = writer.cldf["LanguageTable"]
+            ExampleTable = writer.cldf["ExampleTable"]
+            TextTable = writer.cldf["texts.csv"]
+            
+        with self.cldf_writer(args, cldf_spec="full", clean=False) as writer:
+            writer.cldf.remove_table("ExampleTable")
+            writer.cldf.add_component(ExampleTable)
+            writer.cldf.add_component(TextTable)
+            writer.cldf.add_component(LanguageTable)
 
-        """
-        Convert the raw data to a CLDF dataset.
-
-        >>> args.writer.objects['LanguageTable'].append(...)
-        """
+        self.parse_pdf()

@@ -13,22 +13,22 @@
     "dcat:accessURL": "git@github.com:fmatter/textos_apalai",
     "prov:wasDerivedFrom": [
         {
-            "rdf:about": "git@github.com:fmatter/textos_apalai",
             "rdf:type": "prov:Entity",
-            "dc:created": "4e7044e",
-            "dc:title": "Repository"
+            "dc:title": "Repository",
+            "rdf:about": "git@github.com:fmatter/textos_apalai",
+            "dc:created": "596490f"
         },
         {
-            "rdf:about": "https://github.com/glottolog/glottolog",
             "rdf:type": "prov:Entity",
-            "dc:created": "v4.4-35-gfd2a2fed71",
-            "dc:title": "Glottolog"
+            "dc:title": "Glottolog",
+            "rdf:about": "https://github.com/glottolog/glottolog",
+            "dc:created": "v4.1-1-gd7fe38cc38"
         }
     ],
     "prov:wasGeneratedBy": [
         {
             "dc:title": "python",
-            "dc:description": "3.9.5"
+            "dc:description": "3.7.7"
         },
         {
             "dc:title": "python-packages",
@@ -41,6 +41,152 @@
         "commentPrefix": null
     },
     "tables": [
+        {
+            "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ExampleTable",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "[a-zA-Z0-9_\\-]+"
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                        "required": true,
+                        "name": "ID"
+                    },
+                    {
+                        "dc:extent": "singlevalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
+                        "required": true,
+                        "name": "Language_ID"
+                    },
+                    {
+                        "dc:description": "The example text in the source language.",
+                        "dc:extent": "singlevalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#primaryText",
+                        "required": true,
+                        "name": "Primary_Text"
+                    },
+                    {
+                        "dc:description": "The translation of the example text in a meta language",
+                        "dc:extent": "singlevalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#translatedText",
+                        "required": false,
+                        "name": "Translated_Text"
+                    },
+                    {
+                        "dc:description": "References the language of the translated text",
+                        "dc:extent": "singlevalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#metaLanguageReference",
+                        "required": false,
+                        "name": "Meta_Language_ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment",
+                        "required": false,
+                        "name": "Comment"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Text_ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Example_ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Comments"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "gramm"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "pnm"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "page"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "pnm_parsed"
+                    },
+                    {
+                        "datatype": "integer",
+                        "name": "Sentence_Number"
+                    },
+                    {
+                        "datatype": "integer",
+                        "name": "Phrase_Number"
+                    },
+                    {
+                        "dc:description": "The sequence of words of the primary text to be aligned with glosses",
+                        "dc:extent": "multivalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#analyzedWord",
+                        "required": false,
+                        "separator": "\t",
+                        "name": "Analyzed_Word"
+                    },
+                    {
+                        "dc:description": "The sequence of glosses aligned with the words of the primary text",
+                        "dc:extent": "multivalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#gloss",
+                        "required": false,
+                        "separator": "\t",
+                        "name": "Gloss"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": [
+                            "Language_ID"
+                        ],
+                        "reference": {
+                            "resource": "languages.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
+                    },
+                    {
+                        "columnReference": [
+                            "Meta_Language_ID"
+                        ],
+                        "reference": {
+                            "resource": "languages.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
+                    },
+                    {
+                        "columnReference": [
+                            "Text_ID"
+                        ],
+                        "reference": {
+                            "resource": "texts.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
+                    }
+                ],
+                "primaryKey": [
+                    "ID"
+                ]
+            },
+            "url": "examples.csv"
+        },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
             "dc:extent": 1,
@@ -112,128 +258,6 @@
                 ]
             },
             "url": "languages.csv"
-        },
-        {
-            "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ExampleTable",
-            "tableSchema": {
-                "columns": [
-                    {
-                        "datatype": {
-                            "base": "string",
-                            "format": "[a-zA-Z0-9_\\-]+"
-                        },
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
-                        "required": true,
-                        "name": "ID"
-                    },
-                    {
-                        "dc:extent": "singlevalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
-                        "required": true,
-                        "name": "Language_ID"
-                    },
-                    {
-                        "dc:description": "The example text in the source language.",
-                        "dc:extent": "singlevalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#primaryText",
-                        "required": true,
-                        "name": "Primary_Text"
-                    },
-                    {
-                        "dc:description": "The translation of the example text in a meta language",
-                        "dc:extent": "singlevalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#translatedText",
-                        "required": false,
-                        "name": "Translated_Text"
-                    },
-                    {
-                        "dc:description": "References the language of the translated text",
-                        "dc:extent": "singlevalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#metaLanguageReference",
-                        "required": false,
-                        "name": "Meta_Language_ID"
-                    },
-                    {
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment",
-                        "required": false,
-                        "name": "Comment"
-                    },
-                    {
-                        "datatype": "string",
-                        "name": "Text_ID"
-                    },
-                    {
-                        "datatype": "integer",
-                        "name": "Sentence_Number"
-                    },
-                    {
-                        "datatype": "integer",
-                        "name": "Phrase_Number"
-                    },
-                    {
-                        "dc:description": "The sequence of words of the primary text to be aligned with glosses",
-                        "dc:extent": "multivalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#analyzedWord",
-                        "required": false,
-                        "separator": "\t",
-                        "name": "Analyzed_Word"
-                    },
-                    {
-                        "dc:description": "The sequence of glosses aligned with the words of the primary text",
-                        "dc:extent": "multivalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#gloss",
-                        "required": false,
-                        "separator": "\t",
-                        "name": "Gloss"
-                    }
-                ],
-                "foreignKeys": [
-                    {
-                        "columnReference": [
-                            "Language_ID"
-                        ],
-                        "reference": {
-                            "resource": "languages.csv",
-                            "columnReference": [
-                                "ID"
-                            ]
-                        }
-                    },
-                    {
-                        "columnReference": [
-                            "Meta_Language_ID"
-                        ],
-                        "reference": {
-                            "resource": "languages.csv",
-                            "columnReference": [
-                                "ID"
-                            ]
-                        }
-                    },
-                    {
-                        "columnReference": [
-                            "Text_ID"
-                        ],
-                        "reference": {
-                            "resource": "texts.csv",
-                            "columnReference": [
-                                "ID"
-                            ]
-                        }
-                    }
-                ],
-                "primaryKey": [
-                    "ID"
-                ]
-            },
-            "url": "examples.csv"
         },
         {
             "dc:extent": 3,
