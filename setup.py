@@ -2,13 +2,13 @@ from setuptools import setup
 
 
 setup(
-    name='cldfbench_cldftest',
-    py_modules=['cldfbench_cldftest'],
+    name='textosapalai',
+    py_modules=['textosapalai'],
     include_package_data=True,
     zip_safe=False,
     entry_points={
         'cldfbench.dataset': [
-            'cldftest=cldfbench_cldftest:Dataset',
+            'textos_apalai=cldfbench_textosapalai:Dataset',
         ]
     },
     install_requires=[

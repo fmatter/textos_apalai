@@ -9,5 +9,5 @@ corpus.write_app(dest="concordances")
 
 f = open("stats.md", "w")
 for name, value in zip(["Examples", "Words", "Morphemes"], corpus.get_stats()):
-    f.write(f"{name}: {value}\n")
+    f.write(f"* {name}: {value}\n")
 f.close()

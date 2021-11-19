@@ -1,4 +1,5 @@
 A growing project investigating the Apalaí corpus by Koehn & Koehn (1994) analyzable.
+Due to copyright reasons, I cannot reproduce the entire corpus, but a sample of the current output format can be seen [here](cldf/examples_sample.csv), and a form concordance made with [pyigt](https://github.com/cldf/pyigt) can be found [here](stats/form-concordance.tsv).
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 

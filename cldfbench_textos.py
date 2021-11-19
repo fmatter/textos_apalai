@@ -191,13 +191,18 @@ class KoehnPDFParser:
 
         df = pd.DataFrame.from_dict(parsed)
         df["Language_ID"] = "apa"
-        df.rename(columns={"trash": "Comments"})
-        df.to_csv(os.path.join("cldf", "examples.csv"), index=False)
+        df["Analyzed_Word"] = df["Analyzed_Word"].apply(lambda x: "\\t".join(x.split(" ")))
+        df["Gloss"] = df["Gloss"].apply(lambda x: "\\t".join(x.split(" ")))
+        df.rename(columns={"trash": "Comments", "ID": "Example_ID"}, inplace=True)
+        df.index.name = "ID"
+        df.to_csv(os.path.join("cldf", "examples.csv"))
+        sample_list = ["ner1-008", "ner1-025"]
+        df[df["Example_ID"].isin(sample_list)].to_csv(os.path.join("cldf", "examples_sample.csv"))
 
 
 class Dataset(BaseDataset):
     dir = pathlib.Path(__file__).parent
-    id = "cldftest"
+    id = "textos_apalai"
 
     def cldf_specs(self):  # A dataset must declare all CLDF sets it creates.
         return CLDFSpec(

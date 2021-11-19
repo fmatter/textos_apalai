@@ -16,7 +16,7 @@
             "rdf:type": "prov:Entity",
             "dc:title": "Repository",
             "rdf:about": "git@github.com:fmatter/textos_apalai",
-            "dc:created": "c2b4afb"
+            "dc:created": "7621632"
         },
         {
             "rdf:type": "prov:Entity",
@@ -35,7 +35,7 @@
             "dc:relation": "requirements.txt"
         }
     ],
-    "rdf:ID": "cldftest",
+    "rdf:ID": "textos_apalai",
     "rdf:type": "http://www.w3.org/ns/dcat#Distribution",
     "dialect": {
         "commentPrefix": null

@@ -1,0 +1,3 @@
+ID,Example_ID,Text_ID,Sentence_Number,Translated_Text,Primary_Text,Analyzed_Word,Gloss,gramm,page,pnm,pnm_parsed,Comments,Language_ID
+7,ner1-008,ner1,008,Nenhum respondeu.,"Arypyra kahpyry, ozuhto pyra.",Arypyra\tkahpyry\to-ezuh-to\tpyra,nada\tfeio\tpr_geral_O-responder-NCM\tneg,RESP ADJ PREF -VT -SUF ADV,28,arypyra kahpyry ozuhto pyra,arypyra kahpyry o�ezuh�to pyra,,apa
+24,ner1-025,ner1,025,Mas o finado não pôde ouvir nada.,Yrome oneta sarome pyra aorihtyamo.,Yrome\ton-eta-sarome\tpyra\taorihtyamo,mas\t3p0-ouvir-capaz\tneg\tfinado,OONJ PREF-VT -PP ADV N,30,yrome oneta sarome pyra aorihtyamo,yrome on�eta�sarome pyra aorihtyamo,,apa
