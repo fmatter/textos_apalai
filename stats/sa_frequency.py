@@ -5,7 +5,7 @@ from pycldf.terms import Terms
 
 
 def check_gloss(obj, gloss):
-    igt = IGT("nil", phrase = obj.split(" "), gloss=gloss.split(" "), properties={})
+    igt = IGT("nil", phrase = obj.split("\t"), gloss=gloss.split("\t"), properties={})
     if not igt.is_valid():
         print(igt)
     return igt.glossed_morphemes
@@ -14,7 +14,8 @@ word_count = 0
 morph_count = 0
 
 found_morphemes = {}
-test = Corpus.from_path("koehn_a_koehn_apalai/cldf/cldf-metadata.json")
+test = Corpus.from_path("../cldf/cldf-metadata.json")
+test.check_glosses()
 for igt in test:
     for word in igt.glossed_morphemes:
         word_count += 1
@@ -35,21 +36,23 @@ verbs = yaml.load(open("sa_verbs.json"))
 counts = []
 for verb in verbs:
     verb_count = 0
-    for coin in verb["coins"]:
-        key = ":".join(coin)
+    for form in verb["forms"]:
+        key = ":".join(form)
         if key in found_morphemes:
             verb_count += found_morphemes[key]
     counts.append({
         "count": verb_count,
         "verb": verb["meaning"],
-        "forms": ", ".join(set(x[0] for x in verb["coins"])),
+        "form": verb["form"],
     })
             
 df = pd.DataFrame.from_dict(counts)
 
 df["%\m"] = df["count"] / morph_count
 df["%\w"] = df["count"] / word_count
-print(df.sort_values("count", ascending=False).to_string(formatters={
+df.sort_values("count", ascending=False, inplace=True)
+df.to_csv("sa_verb_stats.csv", index=False)
+print(df.to_string(formatters={
     "%\w": '{:,.2%}'.format,
     "%\m": '{:,.2%}'.format,
 }))
