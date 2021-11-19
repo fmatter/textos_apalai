@@ -10,8 +10,7 @@ from cldfbench import CLDFSpec
 from cldfbench import Dataset as BaseDataset
 
 
-class ApalaiParser():
-    
+class KoehnPDFParser:
     def __init__(self):
 
         line_mapping = json.load(open("etc/line_mapping.json"))
@@ -25,11 +24,8 @@ class ApalaiParser():
         ]
         tokenizer = Tokenizer(Profile(*segment_list))
 
-        texts = {
-            "ner2": {"start_page": 2, "end_page": 15},
-            "po2": {"start_page": 16, "end_page": 26},
-            "ner1": {"start_page": 27, "end_page": 38, "label": "nerl"},
-        }
+        texts = pd.read_csv("etc/texts.csv", index_col=0)
+        texts = texts.to_dict("index")
 
         obj_corr = {
             "ê": "ẽ",
@@ -49,7 +45,14 @@ class ApalaiParser():
                 os.popen(f"cp {source_path} {target_path}")
 
         def print_example(ex):
-            for key in ["ID", "Primary_Text", "Analyzed_Word", "Gloss", "gramm", "Translated_Text"]:
+            for key in [
+                "ID",
+                "Primary_Text",
+                "Analyzed_Word",
+                "Gloss",
+                "gramm",
+                "Translated_Text",
+            ]:
                 if key in ex:
                     print(f"{key}:\t{ex[key]}")
             print("")
@@ -71,7 +74,7 @@ class ApalaiParser():
         def parse_unit(unit_raw, label, text):
             # print("\n".join(unit_raw))
             if label not in unit_raw[0]:
-                return False
+                return None
             nr = unit_raw.pop(0).strip(label).strip()
             unit = {"ID": f"{text}-{nr}", "Text_ID": text, "Sentence_Number": nr}
             # print(unit["ID"])
@@ -135,14 +138,14 @@ class ApalaiParser():
         parsed = []
 
         for text, metadata in texts.items():
-            if "label" in metadata:
-                text_label = metadata["label"]
+            if "Label" in metadata:
+                text_label = metadata["Label"]
             else:
                 text_label = text
             text_folder = text + "_pages"
             page_map = {}
             for text_page, total_page in enumerate(
-                range(metadata["start_page"], metadata["end_page"] + 1)
+                range(metadata["Start"], metadata["End"] + 1)
             ):
                 page_map[text_page + 1] = total_page
             if not os.path.isdir(text_folder):
@@ -175,18 +178,23 @@ class ApalaiParser():
                 units = identify_units(lines, text_label)
                 for unit in units:
                     parsed_unit = parse_unit(unit, text_label, text)
+                    if not parsed_unit:
+                        continue
                     parsed_unit["page"] = total_page
                     if "Primary_Text" in parsed_unit:
                         parsed_unit["pnm"] = ipaify(parsed_unit["Primary_Text"])
                         if "Analyzed_Word" in parsed_unit:
-                            parsed_unit["pnm_parsed"] = ipaify(parsed_unit["Analyzed_Word"], obj=True)
+                            parsed_unit["pnm_parsed"] = ipaify(
+                                parsed_unit["Analyzed_Word"], obj=True
+                            )
                             parsed.append(parsed_unit)
 
         df = pd.DataFrame.from_dict(parsed)
         df["Language_ID"] = "apa"
         df.rename(columns={"trash": "Comments"})
         df.to_csv(os.path.join("cldf", "examples.csv"), index=False)
-        
+
+
 class Dataset(BaseDataset):
     dir = pathlib.Path(__file__).parent
     id = "cldftest"
@@ -221,30 +229,14 @@ class Dataset(BaseDataset):
         args.writer.objects["LanguageTable"].append(
             {"ID": "apa", "Name": "Apalaí", "Glottocode": "apal1257"}
         )
-
-        print("YES?")
-        p = ApalaiParser()
-        # parse_apalai()
-
-        # for text_id, title, lines in iter_texts(self.raw_dir.read('Qiang-2.txt').split('\n')):
-        #     args.writer.objects['texts.csv'].append({'ID': text_id, 'Title': title})
-        #     text, gloss = [], []
-        #     for igt in iter_igts(lines):
-        #         text.extend(igt[1])
-        #         gloss.extend(igt[2])
-        #     for sid, sentence in enumerate(iter_sentences(zip(text, gloss)), start=1):
-        #         for pid, phrase in enumerate(iter_phrases(sentence), start=1):
-        #             example_number += 1
-        #             args.writer.objects['ExampleTable'].append({
-        #                 'ID': example_number,
-        #                 'Primary_Text': ' '.join(p[0] for p in phrase),
-        #                 'Analyzed_Word': [p[0] for p in phrase],
-        #                 'Gloss': [p[1] for p in phrase],
-        #                 'Text_ID': text_id,
-        #                 'Language_ID': 'qiang',
-        #                 'Sentence_Number': sid,
-        #                 'Phrase_Number': pid,
-        #             })
+        
+        for i, row in pd.read_csv("etc/texts.csv").iterrows():
+            args.writer.objects["texts.csv"].append(
+                {"ID": row["ID"], "Title": row["Title"]}
+            )
+        
+        p = KoehnPDFParser()
+        
         """
         Convert the raw data to a CLDF dataset.
 
