@@ -8,14 +8,20 @@ from segments import Tokenizer, Profile
 import unicodedata
 from cldfbench import CLDFSpec
 from cldfbench import Dataset as BaseDataset
+import yaml
 
 
 class KoehnPDFParser:
     def __init__(self):
 
-        line_mapping = json.load(open("etc/line_mapping.json"))
+        self.line_mapping = json.load(open("etc/line_mapping.json"))
         line_moves = json.load(open("etc/line_movements.json"))
         line_splits = json.load(open("etc/line_splits.json"))
+        col_mapping = json.load(open("etc/col_mapping.json"))
+        unit_check = json.load(open("etc/unit_check.json"))
+        insertions  = json.load(open("etc/insertions.json"))
+        replacements  = json.load(open("etc/replacements.json"))
+        broken_units = json.load(open("etc/broken_units.json"))
 
         segments = pd.read_csv("etc/profile.csv")
         segment_list = [
@@ -24,7 +30,7 @@ class KoehnPDFParser:
         ]
         tokenizer = Tokenizer(Profile(*segment_list))
 
-        texts = pd.read_csv("etc/texts.csv", index_col=0)
+        texts = pd.read_csv("etc/texts.csv", index_col=0, keep_default_na=False)
         texts = texts.to_dict("index")
 
         obj_corr = {
@@ -32,7 +38,15 @@ class KoehnPDFParser:
             "~": "Ṽ",
         }
 
-        gloss_corr = {"NCM velho": "NCM-velho", "13S ser": "13S-ser"}
+        gloss_corr = {
+            "VOC~e": "VOCÊ",
+            "NCM velho": "NCM-velho",
+            "13S ser": "13S-ser",
+            'V0C"e': "VOCÊ",
+            "f azer": "fazer",
+            "ref lx": "reflx",
+            "di zer": "dizer",
+        }
 
         def get_pages(text, text_folder, page_map):
             folder_path = os.path.join("temp", text_folder)
@@ -57,39 +71,56 @@ class KoehnPDFParser:
                     print(f"{key}:\t{ex[key]}")
             print("")
 
-        def identify_units(lines, label):
+        def identify_units(lines, label, page_break=False):
             units = []
             current_unit = []
             for line in lines:
                 if label in line:
-                    if current_unit and len(current_unit[0]) > 4:
+                    if current_unit and (len(current_unit[0]) > 3 or page_break):
                         units.append(current_unit)
                     current_unit = []
+                    page_break = False
                 if line.strip() == "":
                     continue
                 current_unit.append(line)
             units.append(current_unit)
             return units
 
+        def print_partial_analysis(unit_raw, unit, keys):
+            for i, l in enumerate(unit_raw):
+                print(f"{i} {l}")
+                if (i + 1) % len(keys) == 0:
+                    print("")
+            print_example(unit)
+
         def parse_unit(unit_raw, label, text):
             # print("\n".join(unit_raw))
             if label not in unit_raw[0]:
                 return None
-            nr = unit_raw.pop(0).strip(label).strip()
-            unit = {"ID": f"{text}-{nr}", "Text_ID": text, "Sentence_Number": nr}
+            nr = unit_raw.pop(0).replace(label, "").strip()
+            id = f"{text}-{nr}"
+            unit = {"ID": id, "Text_ID": text, "Sentence_Number": nr}
             # print(unit["ID"])
             # print(len(unit_raw))
             keys = ["Primary_Text", "Analyzed_Word", "Gloss", "gramm"]
             specific_keys = {"Translated_Text": -1}
-            if unit["ID"] in line_mapping:
+            if id not in unit_check or unit_check[id]["initial"] != 1:
+                print("Input:")
+                print_partial_analysis(unit_raw, unit, keys)
+
+            if unit["ID"] in self.line_mapping:
                 target_lines = {
-                    line: key
-                    for key, sublist in line_mapping[unit["ID"]].items()
+                    line: col_mapping[key]
+                    for key, sublist in self.line_mapping[unit["ID"]].items()
                     for line in sublist
                 }
                 for line, key in dict(
                     sorted(target_lines.items(), key=lambda item: item[0], reverse=True)
                 ).items():
+                    if len(unit_raw) == 0:
+                        print(f"Overparsing {id}:")
+                        print_partial_analysis(unit_raw, unit, keys)
+                        # raise ValueError("Empty lines")
                     if key in keys:
                         keys.remove(key)
                     if key in specific_keys:
@@ -100,13 +131,18 @@ class KoehnPDFParser:
                         unit[key] = unit_raw.pop(line) + " " + unit[key]
             for key, val in specific_keys.items():
                 unit[key] = unit_raw.pop(val)
-            if len(unit_raw) % 2 == 0:
-                while len(unit_raw) != 0:
-                    for key in keys:
-                        if key not in unit:
-                            unit[key] = unit_raw.pop(0)
-                        else:
-                            unit[key] += " " + unit_raw.pop(0)
+            if len(keys) > 1:
+                if len(unit_raw) % len(keys) == 0:
+                    while len(unit_raw) != 0:
+                        for key in keys:
+                            if key not in unit:
+                                unit[key] = unit_raw.pop(0)
+                            else:
+                                unit[key] += " " + unit_raw.pop(0)
+                else:
+                    print(f"Length mismatch in {id} ({len(unit_raw)}):")
+                    print_partial_analysis(unit_raw, unit, keys)
+                    # raise ValueError("Invalid number of lines in unit")
             for key in unit.keys():
                 if key == "Gloss":
                     unit[key] = (
@@ -125,6 +161,15 @@ class KoehnPDFParser:
                     unit[key] = unit[key].translate(
                         {ord(x): y for x, y in obj_corr.items()}
                     )
+            if id not in unit_check:
+                print_example(unit)
+                val = input("Is parsing good? [y]es [N]o\n")
+                if val != "y":
+                    return None
+                else:
+                    if id not in unit_check:
+                        unit_check[id] = {}
+                    unit_check[id]["initial"] = 1
             return unit
 
         delim = [".", ";", ",", "!", "?", "*"]
@@ -138,7 +183,7 @@ class KoehnPDFParser:
         parsed = []
 
         for text, metadata in texts.items():
-            if "Label" in metadata:
+            if metadata["Label"]:
                 text_label = metadata["Label"]
             else:
                 text_label = text
@@ -150,10 +195,12 @@ class KoehnPDFParser:
                 page_map[text_page + 1] = total_page
             if not os.path.isdir(text_folder):
                 get_pages(text, text_folder, page_map)
-            if text != "ner1":
+            if text not in ["po2", "ner1"]:
                 continue
+            page_break = False
             for text_page, total_page in page_map.items():
                 page_id = f"{text}_{text_page}"
+                print(page_id)
                 page_pdf = os.path.join("temp", text_folder, f"{page_id}.pdf")
                 raw_text = parser.from_file(page_pdf)
                 text_file = os.path.join("temp", text_folder, f"{page_id}.txt")
@@ -175,29 +222,59 @@ class KoehnPDFParser:
                 for i, line in enumerate(lines):
                     f.write(f"{i} {line}\n")
                 f.close()
-                units = identify_units(lines, text_label)
-                for unit in units:
-                    parsed_unit = parse_unit(unit, text_label, text)
-                    if not parsed_unit:
-                        continue
-                    parsed_unit["page"] = total_page
-                    if "Primary_Text" in parsed_unit:
-                        parsed_unit["pnm"] = ipaify(parsed_unit["Primary_Text"])
-                        if "Analyzed_Word" in parsed_unit:
-                            parsed_unit["pnm_parsed"] = ipaify(
-                                parsed_unit["Analyzed_Word"], obj=True
-                            )
-                            parsed.append(parsed_unit)
+                units = identify_units(lines, text_label, page_break)
+                for u_c, unit in enumerate(units):
+                    if page_id in broken_units and u_c == len(units) - 1:
+                        page_break = True
+                        partial_unit_1 = unit
+                    else:
+                        if page_break:
+                            unit = partial_unit_1 + unit
+                            page_break = False
+                        parsed_unit = parse_unit(unit, text_label, text)
+                        # print_example(parsed_unit)
+                        if not parsed_unit:
+                            continue
+                        if page_break:
+                            print(parsed_unit, partial_unit_1)
+                        parsed_unit["page"] = total_page
+                        unit_id = parsed_unit["ID"]
+                        if parsed_unit["ID"] in insertions:
+                            for key, inserts in insertions[parsed_unit["ID"]].items():
+                                key = col_mapping[key]
+                                for position, add_text in inserts.items():
+                                    pos = int(position)
+                                    print(f"""Inserting {add_text} in {key} field at position {pos} in unit {parsed_unit["ID"]}""")
+                                    parsed_unit[key] = parsed_unit[key][:pos] + add_text + parsed_unit[key][pos:]
+                        if unit_id in replacements:
+                            for key, repl in replacements[unit_id].items():
+                                for a, b in repl.items():
+                                    print(f"Replacing {a} with {b} in {key} in {unit_id}")
+                                    parsed_unit[col_mapping[key]] = parsed_unit[col_mapping[key]].replace(a, b)
+                                    print(parsed_unit)
+                        if "Primary_Text" in parsed_unit:
+                            parsed_unit["pnm"] = ipaify(parsed_unit["Primary_Text"])
+                            if "Analyzed_Word" in parsed_unit:
+                                parsed_unit["pnm_parsed"] = ipaify(
+                                    parsed_unit["Analyzed_Word"], obj=True
+                                )
+                                parsed.append(parsed_unit)
 
         df = pd.DataFrame.from_dict(parsed)
         df["Language_ID"] = "apa"
-        df["Analyzed_Word"] = df["Analyzed_Word"].apply(lambda x: "\\t".join(x.split(" ")))
-        df["Gloss"] = df["Gloss"].apply(lambda x: "\\t".join(x.split(" ")))
+        df["Analyzed_Word"] = df["Analyzed_Word"].apply(
+            lambda x: "\t".join(x.split(" "))
+        )
+        df["Gloss"] = df["Gloss"].apply(lambda x: "\t".join(x.split(" ")))
         df.rename(columns={"trash": "Comments", "ID": "Example_ID"}, inplace=True)
         df.index.name = "ID"
         df.to_csv(os.path.join("cldf", "examples.csv"))
         sample_list = ["ner1-008", "ner1-025"]
-        df[df["Example_ID"].isin(sample_list)].to_csv(os.path.join("cldf", "examples_sample.csv"))
+        df[df["Example_ID"].isin(sample_list)].to_csv(
+            os.path.join("cldf", "examples_sample.csv")
+        )
+        with open("etc/unit_check.json", "w") as outfile:
+            json.dump(unit_check, outfile, indent=2)
 
 
 class Dataset(BaseDataset):
@@ -228,20 +305,40 @@ class Dataset(BaseDataset):
             {"name": "Sentence_Number", "datatype": "integer"},
             {"name": "Phrase_Number", "datatype": "integer"},
         )
+        args.writer.cldf.remove_columns("ExampleTable", "Gloss", "Analyzed_Word")
+        args.writer.cldf.add_columns("ExampleTable",
+             {
+                "dc:description": "The sequence of words of the primary text to be aligned with glosses",
+                "dc:extent": "multivalued",
+                "datatype": "string",
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#analyzedWord",
+                "required": False,
+                "separator": "\t",
+                "name": "Analyzed_Word",
+            },
+            {
+                "dc:description": "The sequence of glosses aligned with the words of the primary text",
+                "dc:extent": "multivalued",
+                "datatype": "string",
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#gloss",
+                "required": False,
+                "separator": "\t",
+                "name": "Gloss",
+            })
         args.writer.cldf.add_table("texts.csv", "ID", "Title")
         args.writer.cldf.add_foreign_key("ExampleTable", "Text_ID", "texts.csv", "ID")
 
         args.writer.objects["LanguageTable"].append(
             {"ID": "apa", "Name": "Apalaí", "Glottocode": "apal1257"}
         )
-        
+
         for i, row in pd.read_csv("etc/texts.csv").iterrows():
             args.writer.objects["texts.csv"].append(
                 {"ID": row["ID"], "Title": row["Title"]}
             )
-        
+
         p = KoehnPDFParser()
-        
+
         """
         Convert the raw data to a CLDF dataset.
 

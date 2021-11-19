@@ -13,22 +13,22 @@
     "dcat:accessURL": "git@github.com:fmatter/textos_apalai",
     "prov:wasDerivedFrom": [
         {
-            "rdf:type": "prov:Entity",
-            "dc:title": "Repository",
             "rdf:about": "git@github.com:fmatter/textos_apalai",
-            "dc:created": "7621632"
+            "rdf:type": "prov:Entity",
+            "dc:created": "4e7044e",
+            "dc:title": "Repository"
         },
         {
-            "rdf:type": "prov:Entity",
-            "dc:title": "Glottolog",
             "rdf:about": "https://github.com/glottolog/glottolog",
-            "dc:created": "v4.1-1-gd7fe38cc38"
+            "rdf:type": "prov:Entity",
+            "dc:created": "v4.4-35-gfd2a2fed71",
+            "dc:title": "Glottolog"
         }
     ],
     "prov:wasGeneratedBy": [
         {
             "dc:title": "python",
-            "dc:description": "3.7.7"
+            "dc:description": "3.9.5"
         },
         {
             "dc:title": "python-packages",
@@ -142,24 +142,6 @@
                         "name": "Primary_Text"
                     },
                     {
-                        "dc:description": "The sequence of words of the primary text to be aligned with glosses",
-                        "dc:extent": "multivalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#analyzedWord",
-                        "required": false,
-                        "separator": "\\t",
-                        "name": "Analyzed_Word"
-                    },
-                    {
-                        "dc:description": "The sequence of glosses aligned with the words of the primary text",
-                        "dc:extent": "multivalued",
-                        "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#gloss",
-                        "required": false,
-                        "separator": "\\t",
-                        "name": "Gloss"
-                    },
-                    {
                         "dc:description": "The translation of the example text in a meta language",
                         "dc:extent": "singlevalued",
                         "datatype": "string",
@@ -192,6 +174,24 @@
                     {
                         "datatype": "integer",
                         "name": "Phrase_Number"
+                    },
+                    {
+                        "dc:description": "The sequence of words of the primary text to be aligned with glosses",
+                        "dc:extent": "multivalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#analyzedWord",
+                        "required": false,
+                        "separator": "\t",
+                        "name": "Analyzed_Word"
+                    },
+                    {
+                        "dc:description": "The sequence of glosses aligned with the words of the primary text",
+                        "dc:extent": "multivalued",
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#gloss",
+                        "required": false,
+                        "separator": "\t",
+                        "name": "Gloss"
                     }
                 ],
                 "foreignKeys": [
