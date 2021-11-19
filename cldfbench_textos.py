@@ -390,6 +390,7 @@ class Dataset(BaseDataset):
             
         with self.cldf_writer(args, cldf_spec="full", clean=False) as writer:
             writer.cldf.remove_table("ExampleTable")
+            ExampleTable.url = "examples_full.csv"
             writer.cldf.add_component(ExampleTable)
             writer.cldf.add_component(TextTable)
             writer.cldf.add_component(LanguageTable)
