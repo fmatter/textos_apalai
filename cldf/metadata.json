@@ -13,22 +13,22 @@
     "dcat:accessURL": "git@github.com:fmatter/textos_apalai",
     "prov:wasDerivedFrom": [
         {
-            "rdf:type": "prov:Entity",
-            "dc:title": "Repository",
             "rdf:about": "git@github.com:fmatter/textos_apalai",
-            "dc:created": "c5e483d"
+            "rdf:type": "prov:Entity",
+            "dc:created": "4046fd2",
+            "dc:title": "Repository"
         },
         {
-            "rdf:type": "prov:Entity",
-            "dc:title": "Glottolog",
             "rdf:about": "https://github.com/glottolog/glottolog",
-            "dc:created": "v4.1-1-gd7fe38cc38"
+            "rdf:type": "prov:Entity",
+            "dc:created": "v4.4-35-gfd2a2fed71",
+            "dc:title": "Glottolog"
         }
     ],
     "prov:wasGeneratedBy": [
         {
             "dc:title": "python",
-            "dc:description": "3.7.7"
+            "dc:description": "3.9.5"
         },
         {
             "dc:title": "python-packages",
