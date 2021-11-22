@@ -45,5 +45,11 @@
 		"gloss": {
 			"dormi r": "dormir"
 		}
+	},
+	"ner2-010": {
+		"gloss": {"ref1x_se": "reflx_se"}
+	},
+	"ner2-048": {
+		"obj": {"atakíma": "atakĩma"}	
 	}
 }
