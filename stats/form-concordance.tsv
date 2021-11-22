@@ -1,356 +1,484 @@
 ID	FORM	GLOSS	GLOSS_IN_SOURCE	OCCURRENCE	REF
-1	Mame	depois	depois	54	1:0:0 2:0:0 3:0:0 4:0:0 5:0:0 6:0:0 7:0:0 15:0:0 18:0:0 19:0:0 22:0:0 24:0:0 26:0:0 29:0:0 30:0:0 34:0:0 35:0:0 37:0:0 38:0:0 42:0:0 43:0:0 45:0:0 46:0:0 47:0:0 51:0:0 60:0:0 63:0:0 65:0:0 67:0:0 68:0:0 69:0:0 74:0:0 79:0:0 80:0:0 85:0:0 86:0:0 88:0:0 89:0:0 90:0:0 92:0:0 93:0:0 94:0:0 95:0:0 96:0:0 100:0:0 102:0:0 106:0:0 108:0:0 109:0:0 117:0:0 118:0:0 121:0:0 122:0:0 123:0:0
-2	se	comp	comp	46	6:2:2 7:1:2 8:3:2 13:2:2 15:1:2 18:2:2 19:2:2 22:1:2 23:1:2 24:1:2 25:0:2 25:2:2 30:2:2 30:6:2 32:3:2 32:8:2 34:3:2 35:2:2 37:3:2 42:1:2 43:2:2 45:2:2 46:3:2 49:4:2 50:2:3 51:3:2 54:5:2 72:0:2 73:1:2 79:8:2 80:5:2 86:1:2 86:5:2 88:1:2 90:1:2 94:2:2 95:1:2 96:2:2 105:1:2 107:5:3 117:5:2 118:1:2 124:0:2 125:2:2 126:3:2 132:5:2
-3	to	comp	comp	21	1:3:0 2:2:0 3:1:0 8:3:0 15:1:0 18:2:0 22:1:0 24:1:0 25:0:0 25:2:0 26:2:0 30:6:0 32:3:0 32:8:0 34:3:0 80:5:0 86:5:0 105:1:0 107:5:0 124:0:0 125:2:0
-4	rahkene	consumação	consumação	20	5:3:0 17:6:0 22:3:0 26:4:0 37:6:0 51:4:0 54:4:0 58:3:0 68:3:0 69:2:0 85:4:0 86:2:0 88:2:0 90:2:0 94:5:0 95:4:0 96:5:0 118:4:0 122:3:0 124:2:0
-5	ne	DPT	DPT	19	62:2:2 64:1:3 67:1:2 68:1:2 69:1:2 74:5:2 85:1:2 92:3:2 93:4:2 99:0:2 106:3:2 108:4:2 109:1:2 121:1:2 122:1:2 127:4:2 128:1:2 130:0:1 131:4:2
-6	ynan	nós	nós	19	62:2:0 64:1:0 69:1:0 74:5:0 75:2:0 77:0:0 78:3:0 85:1:0 91:4:0 92:3:0 93:4:0 99:0:0 104:0:0 106:3:0 111:6:0 114:3:0 121:1:0 122:1:0 131:4:0
-7	ka	dizer_fazer	dizer_fazer	16	12:1:0 12:2:0 13:2:1 14:1:1 17:4:1 20:3:1 35:2:1 41:4:1 43:2:1 45:2:1 46:3:1 49:4:1 50:1:0 54:5:1 70:1:0 107:1:0
-8	yna	Nós	Nós	16	60:3:0 62:4:0 63:1:0 72:1:0 74:2:0 79:1:0 89:4:0 94:3:0 95:2:0 96:3:0 100:1:0 102:1:0 105:2:0 111:2:0 117:1:0 118:3:0
-9	yto	ir	ir	16	1:3:1 2:2:1 18:2:1 23:1:1 24:1:1 25:0:1 25:2:1 42:1:1 59:1:0 62:2:1 63:2:0 74:3:0 76:1:0 79:2:0 85:1:1 102:2:0
-10	kono	cunhado	cunhado	15	2:1:1 11:4:1 14:2:1 23:3:1 28:1:1 32:6:1 38:1:1 41:5:1 43:3:1 45:3:1 46:1:0 46:4:1 50:3:1 80:3:1 81:2:0
-11	ty	comp	comp	15	14:1:0 17:4:0 19:2:0 20:3:0 33:4:0 35:2:0 37:3:0 41:4:0 43:2:0 45:2:0 46:3:0 49:4:0 54:5:0 90:1:0 117:5:0
-12	a	para_por	para_por	14	0:2:0 33:2:0 37:5:0 43:4:0 46:4:0 51:6:0 72:2:0 80:2:0 80:4:0 89:5:0 94:4:0 95:3:0 96:4:0 132:3:0
-13	pyra	neg	neg	14	21:4:0 26:1:1 36:1:0 40:1:0 41:2:0 66:3:0 83:2:0 97:1:0 105:5:0 111:1:0 120:0:1 123:4:0 125:1:0 132:1:0
-14	moro	açãoFoco	açãoFoco	13	63:3:0 65:3:0 70:2:0 71:2:0 79:3:0 87:2:0 89:3:0 100:3:0 102:4:0 107:2:0 116:2:0 117:4:0 119:3:0
-15	papa	pai	pai	13	1:4:0 7:2:0 10:4:0 13:3:0 23:5:0 27:2:0 32:5:0 35:3:0 37:4:0 42:9:0 43:5:0 43:7:0 51:1:0
-16	repe	frust	frust	13	1:5:0 20:5:0 31:3:0 62:5:0 65:4:0 72:3:0 73:2:0 74:6:0 75:3:0 77:1:0 78:4:0 79:9:0 82:1:0
-17	toto	grupo	grupo	13	3:2:0 18:4:0 23:2:0 24:2:0 25:1:0 25:3:0 29:3:0 30:7:0 33:5:0 34:4:0 42:3:0 57:10:0 116:3:0
-18	ropa	de_novo	de_novo	12	18:3:0 42:2:0 67:2:0 74:4:0 102:3:0 106:4:0 117:3:0 117:6:0 118:2:0 119:2:0 121:2:0 122:2:0
-19	a	3pos	3pos	11	2:1:0 11:4:0 14:2:0 23:3:0 28:1:0 32:6:0 38:1:0 41:5:0 45:3:0 50:3:0 80:3:0
-20	ry	NCM	NCM	11	50:1:1 63:2:1 70:1:1 71:0:2 79:2:1 87:1:1 89:2:1 100:2:1 102:2:1 107:1:1 117:2:1
-21	t	comp	comp	11	5:2:0 5:4:0 30:2:0 50:2:0 51:3:0 72:0:0 73:1:0 94:2:0 96:2:0 118:1:0 132:5:0
-22	a	dizer	dizer	10	11:1:0 12:3:0 75:2:1 77:0:1 78:3:1 84:2:0 91:4:1 104:0:1 111:6:1 114:3:1
-23	rokẽ	só	só	9	27:1:0 33:3:0 42:8:0 58:2:0 85:3:0 98:2:0 124:1:0 131:1:0 132:4:0
-24	arimi	macaco	macaco	8	1:1:0 4:1:0 5:1:0 6:1:0 7:4:0 19:1:0 21:2:0 57:6:0
-25	a	ser_estar	ser_estar	7	30:3:0 57:3:0 57:5:0 76:2:2 91:3:1 98:1:0 111:3:0
-26	mety	tanga	tanga	6	36:0:1 37:7:1 40:0:1 41:1:1 42:10:0 43:6:1
-27	rokene	somente	somente	6	28:4:0 56:1:0 78:2:0 126:2:0 127:1:0 130:3:0
-28	uo	matar	matar	6	5:4:1 69:1:1 71:0:1 72:0:1 73:1:1 74:1:1
-29	To	puxa	puxa	5	9:0:0 16:0:0 39:0:0 47:1:0 53:0:0
-30	exi	estar	estar	5	20:1:1 32:4:0 74:5:1 108:4:1 131:4:1
-31	kyn	3pS	3pS	5	67:1:0 68:1:0 108:4:0 109:1:0 128:1:0
-32	pata	aldeia	aldeia	5	2:4:0 34:1:0 42:4:0 107:3:0 121:3:0
-33	ro	mesmo	mesmo	5	17:1:0 71:4:1 76:0:1 78:1:0 114:2:1
-34	***	***	***	4	60:4:0 61:3:0 72:4:0 118:8:0
-35	Yna	Nós	Nós	4	87:0:0 116:0:0 119:0:0 128:0:0
-36	arimi	guamba	guamba	4	65:1:0 93:5:0 94:1:0 123:1:0
-37	exiryke	porque_é	porque_é	4	87:5:0 91:6:0 120:3:0 124:4:0
-38	kaikuxi	onça	onça	4	0:1:0 8:2:0 21:1:0 26:3:0
-39	kohmã	anoitecer	anoitecer	4	86:1:1 88:1:1 90:1:1 91:5:1
-40	kynako	disse	disse	4	82:0:0 110:0:0 112:1:0 115:2:0
-41	moroto	lá	lá	4	101:1:0 108:3:0 128:3:0 130:2:0
-42	se	ccmp	ccmp	4	10:3:2 11:3:2 29:2:2 33:4:2
-43	se	purpM	purpM	4	1:2:1 7:5:1 59:0:1 62:1:1
-44	toh	grupo	grupo	4	17:5:0 20:4:0 22:2:0 31:2:0
-45	Kaikuxi	onça	onça	3	17:0:0 45:4:0 49:0:0
-46	aorihtyamo	finado	finado	3	67:3:0 80:1:0 83:3:0
-47	e	3	3	3	5:5:0 8:4:0 19:3:0
-48	eh	ficar	ficar	3	60:2:0 86:5:1 123:3:0
-49	eh	surpresa	surpresa	3	26:2:1 29:2:1 48:1:0
-50	ekahma	seguir	seguir	3	0:4:0 22:1:1 45:6:0
-51	eporehka	chegar	chegar	3	34:3:1 91:1:0 105:1:1
-52	eta	ouvir	ouvir	3	8:3:1 13:0:0 83:1:1
-53	htao	quando	quando	3	8:1:1 30:3:1 57:5:1
-54	htao	se	se	3	32:1:1 98:1:1 111:3:1
-55	iporiry	igarapé	igarapé	3	30:1:0 30:4:0 33:1:0
-56	ke	PT	PT	3	75:2:2 77:0:2 78:3:2
-57	ke	pos	pos	3	36:0:2 40:0:2 41:1:2
-58	kene	IPT	IPT	3	84:2:1 91:4:2 104:0:2
-59	me	DESC	DESC	3	23:4:2 57:1:1 72:5:0
-60	me	como	como	3	37:7:2 42:10:2 126:1:2
-61	n	3pS	3pS	3	12:5:0 20:1:0 46:2:0
-62	no	IPT	IPT	3	45:6:1 46:2:3 129:3:1
-63	onuh	subir	subir	3	7:1:1 15:1:1 119:1:0
-64	pihpo	pele	pele	3	37:2:0 42:7:0 54:1:0
-65	poko	relativo_a	relativo_a	3	59:2:0 127:3:0 131:3:0
-66	pona	para	para	3	34:2:0 42:5:0 107:4:0
-67	reh	expectativo	expectativo	3	12:4:0 98:3:0 129:1:0
-68	roropa	também	também	3	32:7:0 84:1:0 97:4:0
-69	ry	pos	pos	3	37:2:1 42:7:1 54:1:1
-70	se	compASP	compASP	3	4:2:2 5:2:2 5:4:2
-71	se	desej	desej	3	17:4:2 21:3:0 74:3:2
-72	to	conp	conp	3	7:1:0 23:1:0 126:3:0
-73	tou	pl_IPT	pl_IPT	3	76:2:3 91:3:2 103:1:2
-74	ty	desc	desc	3	36:0:0 40:0:0 41:1:0
-75	wewe	árvore	árvore	3	37:1:0 41:0:0 42:6:0
-76	xine	plRel	plRel	3	4:4:0 5:6:0 19:4:0
-77	ynara	assim	assim	3	35:1:0 43:1:0 45:1:0
-78	Enara	assim	assim	2	127:0:0 131:0:0
-79	Onoky	quem	quem	2	10:0:0 114:0:0
-80	Totahke	saboroso	saboroso	2	97:0:0 98:0:0
-81	Ṽ	POS	POS	2	42:10:1 43:6:2
-82	Ṽko	contASP	contASP	2	12:3:1 76:1:1
-83	Yrcme	mas	mas	2	21:0:0 33:0:0
-84	ae	pela	pela	2	118:7:0 118:9:0
-85	ahno	gente	gente	2	0:3:0 108:1:0
-86	amorepa	ensinar	ensinar	2	4:2:1 67:1:1
-87	ase	aux	aux	2	12:5:1 40:2:1
-88	dup	***	***	2	46:1:1 81:2:1
-89	ekureh	falhar	falhar	2	91:2:0 125:2:1
-90	emah	mãoPos	mãoPos	2	27:3:0 28:2:0
-91	eny	mãe	mãe	2	51:5:1 54:6:1
-92	erery	figado	figado	2	93:6:0 96:1:0
-93	eseka	morder	morder	2	32:3:1 32:8:1
-94	ezuh	responder	responder	2	66:2:1 68:1:1
-95	hxo	aument	aument	2	17:1:1 79:7:1
-96	itamurume	muitos	muitos	2	87:4:0 116:4:0
-97	itu	floresta	floresta	2	129:2:0 132:2:0
-98	j	lSO_pos	lSO_pos	2	51:5:0 54:6:0
-99	ka	dizer	dizer	2	10:3:1 11:3:1
-100	kakoxi	para_cima	para_cima	2	7:3:0 15:2:0
-101	kanawa	canoa	canoa	2	118:5:0 120:1:0
-102	ke	com_inst	com_inst	2	57:9:0 58:1:1
-103	kene	DPT	DPT	2	111:6:2 114:3:2
-104	mahna	está	está	2	98:6:0 129:4:0
-105	moro	aquele//a	aquele//a	2	127:2:0 131:2:0
-106	mya	longe	longe	2	63:4:0 91:0:0
-107	oeh	vir	vir	2	106:3:1 117:2:0
-108	ooeh	vir	vir	2	5:2:1 118:1:1
-109	os	reflx_se	reflx_se	2	3:1:1 50:2:1
-110	osema	caminho	caminho	2	23:4:0 79:6:0
-111	oturupo	perguntar	perguntar	2	80:5:1 109:1:1
-112	popyra	mal	mal	2	97:3:0 99:2:0
-113	pore	chegar	chegar	2	79:5:0 89:7:0
-114	puru	assar	assar	2	93:7:0 95:1:1
-115	ro	ainda	ainda	2	57:2:0 79:7:0
-116	ru	pos	pos	2	116:1:1 119:1:1
-117	ry	NOM	NOM	2	65:2:1 74:3:1
-118	ry	subjunct	subjunct	2	32:4:1 32:9:1
-119	s	12S	12S	2	76:2:0 103:1:0
-120	sasaka	eminente	eminente	2	29:1:1 31:1:1
-121	se	conp	conp	2	20:3:2 26:2:2
-122	se	contPT	contPT	2	57:7:1 60:2:1
-123	t	obj	obj	2	71:0:0 74:1:0
-124	tapyi	casa	casa	2	92:1:0 93:1:0
-125	tiko	pouquinho	pouquinho	2	68:2:0 71:1:0
-126	to	pl	pl	2	42:1:0 48:1:1
-127	topo	NCM	NCM	2	0:4:1 59:1:1
-128	ty	compl	compl	2	10:3:0 11:3:0
-129	tõsẽ	carne	carne	2	98:5:0 114:1:0
-130	urakana	caçar	caçar	2	59:0:0 62:1:0
-131	wo	matar	matar	2	1:2:0 57:7:0
-132	xita	chorar	chorar	2	29:1:0 31:1:0
-133	ya	para//por	para//por	2	4:3:1 5:5:1
-134	ya	para_por	para_por	2	8:4:1 19:3:1
-135	yna	nos	nos	2	45:5:0 71:3:0
-136	ypy	montanha	montanha	2	89:1:0 89:8:0
-137	z	dele	dele	2	20:2:0 126:1:0
-138	5	cinco	cinco	1	86:3:0
-139	Arimi	guamba	guamba	1	73:0:0
-140	Arypyra	nada	nada	1	66:0:0
-141	Awihwi	irmão_mais_velho	irmão_mais_velho	1	84:3:0
-142	Axi	rápido	rápido	1	23:0:0
-143	Ehmaropa	vamos_todos	vamos_todos	1	75:0:0
-144	Iporiry	igarapé	igarapé	1	32:0:0
-145	Ka	dizer_fazer	dizer_fazer	1	12:0:0
-146	Kae	alto	alto	1	8:0:0
-147	Morara	semelhante	semelhante	1	50:0:0
-148	Morararo	mesma_coisa	mesma_coisa	1	28:0:0
-149	Moroto	lá	lá	1	64:0:0
-150	Morotoino	depois	depois	1	62:0:0
-151	Mose	este//a	este//a	1	112:0:0
-152	Mya	longe	longe	1	105:0:0
-153	Omise	ccm_fome	ccm_fome	1	109:2:0
-154	Omise	com_fome	com_fome	1	111:0:0
-155	Otara	o_que_é_que	o_que_é_que	1	11:0:0
-156	Otoko	onde	onde	1	103:0:0
-157	Otuh	comer	comer	1	113:0:0
-158	Pakira	caititu	caititu	1	115:0:0
-159	Papa	pai	pai	1	57:0:0
-160	Pata	aldeia	aldeia	1	61:0:0
-161	Pitiko	um_pouco	um_pouco	1	31:0:0
-162	Popyra	mal	mal	1	129:0:0
-163	Pore	chegar	chegar	1	107:0:0
-164	Sero	esta	esta	1	0:0:0
-165	Seromaroro	agora_mesrno	agora_mesrno	1	58:0:0
-166	Sã	amanhecer	amanhecer	1	101:0:0
-167	Tah	se_perder	se_perder	1	132:0:0
-168	Taky	arco	arco	1	27:0:0
-169	Tano	aqui	aqui	1	78:0:0
-170	Taro	aqui	aqui	1	20:0:0
-171	To	atirar	atirar	1	70:0:0
-172	Tomeseke	com_cuidado	com_cuidado	1	48:0:0
-173	Tõ	comer	comer	1	125:0:0
-174	Ukuh	tentar	tentar	1	130:0:0
-175	ṼVko	cont	cont	1	11:1:1
-176	Ṽpo	expirado	expirado	1	34:1:1
-177	Ṽpo	velho	velho	1	59:1:2
-178	Ṽpyry	***	***	1	0:4:2
-179	Wewe	árvore	árvore	1	54:0:0
-180	Ynara	assim	assim	1	56:0:0
-181	Yrome	mas	mas	1	83:0:0
-182	Ywy	eu	eu	1	84:0:0
-183	a	GenPr	GenPr	1	8:1:0
-184	aaa	***	***	1	60:1:0
-185	amo	cobrir	cobrir	1	92:3:1
-186	anumma	subir	subir	1	89:2:0
-187	apiaka	dividir	dividir	1	64:1:2
-188	apoto	fogo	fogo	1	93:3:0
-189	arakapusa	espingarda	espingarda	1	58:1:0
-190	aro	levar	levar	1	51:3:1
-191	at	reflex	reflex	1	64:1:1
-192	atarypo	apressar	apressar	1	87:1:0
-193	awihwi	irrnão_mais_velho	irrnão_mais_velho	1	84:4:0
-194	axi	rapido	rapido	1	120:0:0
-195	axi	rápido	rápido	1	18:1:0
-196	e	ele	ele	1	4:3:0
-197	e	reflx	reflx	1	46:2:1
-198	ehma	forquilha	forquilha	1	6:5:0
-199	ehpi	beira	beira	1	106:2:0
-200	ekaro	dar	dar	1	126:3:1
-201	ema	jogar	jogar	1	124:0:1
-202	emeh	amanhecer	amanhecer	1	103:1:1
-203	emepy	madrugada	madrugada	1	100:2:0
-204	emitapã	fome	fome	1	107:5:1
-205	emory	cume_da_montanha	cume_da_montanha	1	89:9:0
-206	enakünuh	engasgou	engasgou	1	50:2:2
-207	epory	encontrar	encontrar	1	3:1:2
-208	epuka	cair	cair	1	30:6:1
-209	esety	nome	nome	1	61:1:0
-210	etuarima	sofrer	sofrer	1	128:1:1
-211	eunohnõko	***	***	1	38:2:0
-212	exi	ficar	ficar	1	32:9:0
-213	exi	ser	ser	1	127:4:1
-214	h	enfatico	enfatico	1	99:3:0
-215	h	pergunta	pergunta	1	91:0:1
-216	hko	avaliar	avaliar	1	10:1:0
-217	hna	3Saux	3Saux	1	81:1:0
-218	hna	está	está	1	11:2:0
-219	hnao	se_não_estivesse	se_não_estivesse	1	41:0:1
-220	hro	resposta_pos	resposta_pos	1	99:1:0
-221	htao	dentro_do	dentro_do	1	129:2:1
-222	htao	guando	guando	1	57:3:1
-223	ikapo	atraz	atraz	1	85:2:0
-224	ikure	rio_abaixo	rio_abaixo	1	105:3:0
-225	imepy	outro	outro	1	2:5:0
-226	ipunaka	profundamente	profundamente	1	97:2:0
-227	jamihta	fortificar	fortificar	1	117:5:1
-228	kae	alto	alto	1	6:3:0
-229	kahpyry	feio	feio	1	66:1:0
-230	ke	razão	razão	1	50:1:2
-231	keh	cess	cess	1	107:5:2
-232	kene	amelior	amelior	1	75:1:0
-233	ko	IMP	IMP	1	113:0:2
-234	ko	imp	imp	1	48:1:2
-235	ko	inp	inp	1	13:0:1
-236	kohma	chamar	chamar	1	65:2:0
-237	konopo	chuva	chuva	1	87:3:0
-238	konõto	grande	grande	1	118:6:0
-239	kuaka	para	para	1	30:5:0
-240	kuao	na_água	na_água	1	60:5:0
-241	kure	boa	boa	1	98:4:0
-242	kuroko	ao_longo_de	ao_longo_de	1	106:2:1
-243	kururnu	urubu	urubu	1	126:0:0
-244	m	"V0C""e"	"V0C""e"	1	40:2:0
-245	mano	está_falando	está_falando	1	111:5:0
-246	me	ccmo	ccmo	1	20:2:2
-247	metyka	tirou_a_tanga	tirou_a_tanga	1	46:2:2
-248	moe	longe	longe	1	26:1:0
-249	moino	de_lá	de_lá	1	2:3:0
-250	moky	lá_está	lá_está	1	10:2:0
-251	mokyro	aquele	aquele	1	17:3:0
-252	mokyro	aquele//a	aquele//a	1	115:1:0
-253	moro	agueie//a	agueie//a	1	61:2:0
-254	mose	este//a	este//a	1	114:2:0
-255	mukuru	filho	filho	1	54:2:1
-256	mya	além	além	1	63:5:0
-257	mya	topico	topico	1	63:6:0
-258	nae	tem	tem	1	49:2:0
-259	naka	para	para	1	105:3:1
-260	nase	está	está	1	49:3:0
-261	no	hortativo	hortativo	1	20:1:2
-262	nomo	abandanar	abandanar	1	19:2:1
-263	nyh	dormir	dormir	1	129:3:0
-264	nõko	cont	cont	1	91:2:1
-265	o	pr_geral_O	pr_geral_O	1	66:2:0
-266	oh	came	came	1	20:2:1
-267	oh	carne	carne	1	126:1:1
-268	okomino	depois	depois	1	23:6:0
-269	on	3p0	3p0	1	83:1:0
-270	one	ver	ver	1	30:2:1
-271	orame	horas	horas	1	86:4:0
-272	otoko	onde	onde	1	76:0:0
-273	otuh	comer	comer	1	116:1:0
-274	otyhka	terminar	terminar	1	93:2:0
-275	otyryhka	desembarcar	desembarcar	1	121:1:1
-276	owo	se_levantar	se_levantar	1	122:1:1
-277	pahne	favor	favor	1	13:1:0
-278	pake	antigamente	antigamente	1	57:4:0
-279	pake	cedo	cedo	1	32:2:0
-280	pika	descascar	descascar	1	37:3:1
-281	pitiko	pequena	pequena	1	92:2:0
-282	po	na	na	1	28:2:1
-283	po	noá	noá	1	27:3:1
-284	poe	de_lá	de_lá	1	2:6:0
-285	poeto	criança	criança	1	57:1:0
-286	poko	occupar_com	occupar_com	1	123:2:0
-287	pona	em_cima_do	em_cima_do	1	89:10:0
-288	pona	no//a	no//a	1	121:4:0
-289	pukuro	media	media	1	105:4:1
-290	pune	caber	caber	1	71:4:0
-291	puxa	To!	To!	1	35:4:0
-292	pynoh	salvar	salvar	1	33:4:1
-293	pyra	Não_há	Não_há	1	32:1:0
-294	pyrou	flecha	flecha	1	57:8:0
-295	ra	Não	Não	1	91:1:1
-296	rukuh	superlativo	superlativo	1	17:2:0
-297	ryhpoka	desengatar	desengatar	1	7:5:0
-298	sah	sacudir	sacudir	1	111:4:0
-299	samo	semelhante	semelhante	1	128:2:0
-300	sarome	capaz	capaz	1	83:1:2
-301	se	amelior	amelior	1	13:0:2
-302	se	camp	camp	1	91:5:2
-303	se	campASP	campASP	1	1:3:2
-304	se	ccmpASP	ccmpASP	1	2:2:2
-305	se	ccnpASP	ccnpASP	1	3:1:3
-306	se	coni>	coni>	1	14:1:2
-307	se	corop	corop	1	41:4:2
-308	syt	12S	12S	1	91:3:0
-309	sõ	suando	suando	1	89:6:0
-310	t	ccmp	ccmp	1	4:2:0
-311	t	conp	conp	1	6:2:0
-312	taka	para	para	1	79:6:1
-313	taky	arco	arco	1	28:3:0
-314	tao	dentro	dentro	1	6:5:1
-315	tiko	enfatico	enfatico	1	99:3:1
-316	to	NCM	NCM	1	66:2:2
-317	to	PL	PL	1	113:0:1
-318	to	ThemPOS	ThemPOS	1	43:3:0
-319	to	camp	camp	1	29:2:0
-320	toh	NCM	NCM	1	123:3:1
-321	tohme	para	para	1	93:7:1
-322	toiro	uma	uma	1	130:1:0
-323	tu	camp	camp	1	79:8:0
-324	tu	comp	comp	1	95:1:0
-325	tuhke	muitos	muitos	1	49:1:0
-326	tuna	água	água	1	106:1:0
-327	ty	ThemDPos	ThemDPos	1	37:7:0
-328	ty	canp	canp	1	13:2:0
-329	ty	ccmp	ccmp	1	91:5:0
-330	ty	conp	conp	1	86:1:0
-331	ty	cornp	cornp	1	88:1:0
-332	tymoke	estragada	estragada	1	124:3:0
-333	tã	perto	perto	1	105:4:0
-334	tãkye	feliz	feliz	1	62:3:0
-335	tõ	grupo	grupo	1	108:2:0
-336	tüta	sair	sair	1	79:8:1
-337	u	meu	meu	1	54:2:0
-338	uahka	tirar_bucho	tirar_bucho	1	94:2:1
-339	uka	queimar	queimar	1	93:4:1
-340	ukuh	tentar	tentar	1	99:0:1
-341	xia	para_cá	para_cá	1	81:0:0
-342	xipo	tempConj_depois	tempConj_depois	1	93:2:1
-343	xípo	depois_de	depois_de	1	74:1:2
-344	y	meu	meu	1	43:6:0
-345	ynan	13S	13S	1	127:4:0
-346	yryh	engatou	engatou	1	6:2:1
-347	yt	***	***	1	76:2:1
-348	yty	botar_timbó	botar_timbó	1	132:5:1
-349	ywy	eu	eu	1	36:2:0
-350	zaraimo	angelim	angelim	1	6:4:0
-351	zuh	cabeça	cabeça	1	23:4:1
-352	zumo	grande	grande	1	120:2:0
-353	Ü	resp	resp	1	14:0:0
-354	õ	comer	comer	1	96:2:1
-355	ü	resp	resp	1	79:4:0
+1	Mame	depois	depois	69	24:0:0 45:0:0 47:0:0 50:0:0 55:0:0 63:0:0 66:0:0 69:0:0 71:0:0 72:0:0 74:0:0 78:0:0 89:0:0 90:0:0 91:0:0 92:0:0 93:0:0 94:0:0 95:0:0 103:0:0 106:0:0 107:0:0 110:0:0 112:0:0 114:0:0 117:0:0 118:0:0 122:0:0 123:0:0 125:0:0 126:0:0 130:0:0 131:0:0 132:0:0 133:0:0 134:0:0 135:0:0 139:0:0 140:0:0 143:0:0 148:0:0 151:0:0 153:0:0 155:0:0 156:0:0 157:0:0 162:0:0 167:0:0 168:0:0 173:0:0 174:0:0 176:0:0 177:0:0 178:0:0 180:0:0 181:0:0 182:0:0 183:0:0 184:0:0 188:0:0 190:0:0 194:0:0 196:0:0 197:0:0 205:0:0 206:0:0 209:0:0 210:0:0 211:0:0
+2	se	comp	comp	57	5:1:2 8:0:2 9:0:3 10:2:2 11:0:2 19:0:2 49:0:2 53:2:3 82:2:2 94:2:2 95:1:2 96:3:2 101:2:2 103:1:2 106:2:2 107:2:2 110:1:2 111:1:2 112:1:2 113:0:2 113:2:2 118:2:2 118:6:2 120:3:2 120:8:2 122:3:2 123:2:2 124:3:2 125:3:2 130:1:2 131:2:2 132:2:2 133:2:2 134:3:2 137:4:2 138:2:3 139:3:2 142:5:2 160:0:2 161:1:2 167:8:2 168:5:2 174:1:2 174:5:2 176:1:2 178:1:2 182:2:2 183:1:2 184:2:2 193:1:2 195:5:3 205:5:2 206:1:2 212:0:2 213:2:2 214:3:2 220:5:2
+3	ne	DPT	DPT	41	2:3:2 30:3:2 31:4:2 32:2:1 40:0:3 45:1:2 47:2:2 50:1:2 52:2:2 56:0:2 62:2:1 69:1:2 70:3:2 71:2:2 72:2:1 73:3:2 74:4:2 77:1:1 80:3:2 82:4:2 84:1:1 86:2:1 150:2:2 152:1:3 155:1:2 156:1:2 157:1:2 162:5:2 173:1:2 180:3:2 181:4:2 187:0:2 194:3:2 196:4:2 197:1:2 209:1:2 210:1:2 215:4:2 216:1:2 218:0:1 219:4:2
+4	rahkene	consumação	consumação	32	6:3:0 29:4:0 31:5:0 32:3:0 32:6:0 55:4:0 56:1:0 69:2:0 83:3:0 84:3:0 85:4:0 93:3:0 105:6:0 110:3:0 114:4:0 125:6:0 139:4:0 142:4:0 143:5:0 146:3:0 156:3:0 157:2:0 173:4:0 174:2:0 176:2:0 178:2:0 182:5:0 183:4:0 184:5:0 206:4:0 210:3:0 212:2:0
+5	ynan	nós	nós	26	40:0:0 43:4:0 50:1:0 56:0:0 69:1:0 71:2:0 82:4:0 150:2:0 152:1:0 157:1:0 162:5:0 163:2:0 165:0:0 166:3:0 173:1:0 179:4:0 180:3:0 181:4:0 187:0:0 192:0:0 194:3:0 199:6:0 202:3:0 209:1:0 210:1:0 219:4:0
+6	to	comp	comp	25	9:0:0 19:0:0 59:3:0 89:3:0 90:2:0 91:1:0 96:3:0 103:1:0 106:2:0 110:1:0 112:1:0 113:0:0 113:2:0 114:2:0 118:6:0 120:3:0 120:8:0 122:3:0 143:2:0 168:5:0 174:5:0 193:1:0 195:5:0 212:0:0 213:2:0
+7	yna	Nós	Nós	25	36:3:0 38:4:0 46:4:0 47:1:0 54:1:0 55:1:0 63:1:0 64:1:0 83:2:0 148:3:0 150:4:0 151:1:0 160:1:0 162:2:0 167:1:0 177:4:0 182:3:0 183:2:0 184:3:0 188:1:0 190:1:0 193:2:0 199:2:0 205:1:0 206:3:0
+8	pyra	neg	neg	24	4:5:0 14:1:0 16:1:0 21:1:0 23:6:0 36:1:0 38:3:0 59:2:0 66:2:0 74:2:0 109:4:0 114:1:1 124:1:0 128:1:0 129:2:0 154:3:0 171:2:0 185:1:0 193:5:0 199:1:0 208:0:1 211:4:0 213:1:0 220:1:0
+9	yto	ir	ir	23	38:1:0 64:2:0 65:1:0 69:1:1 72:2:0 77:1:0 82:4:1 89:3:1 90:2:1 106:2:1 111:1:1 112:1:1 113:0:1 113:2:1 130:1:1 147:1:0 150:2:1 151:2:0 162:3:0 164:1:0 167:2:0 173:1:1 190:2:0
+10	ka	dizer_fazer	dizer_fazer	22	8:0:1 37:2:0 57:1:0 100:1:0 100:2:0 101:2:1 102:1:1 105:4:1 108:3:1 123:2:1 129:4:1 131:2:1 132:2:1 132:4:1 132:9:1 133:2:1 134:3:1 137:4:1 138:1:0 142:5:1 158:1:0 195:1:0
+11	Morarame	então	então	20	1:0:0 4:0:0 5:0:0 6:0:0 10:0:0 20:0:0 22:0:0 27:0:0 29:0:0 30:0:0 31:0:0 32:0:0 35:0:0 37:0:0 44:0:0 46:0:0 54:0:0 77:0:0 80:0:0 84:0:0
+12	moro	açãoFoco	açãoFoco	20	37:3:0 55:3:0 57:2:0 63:3:0 64:3:0 65:2:0 71:3:0 151:3:0 153:3:0 158:2:0 159:2:0 167:3:0 175:2:0 177:3:0 188:3:0 190:4:0 195:2:0 204:2:0 205:4:0 207:3:0
+13	***	***	***	18	2:2:0 34:0:0 43:2:0 51:3:0 53:3:0 54:4:0 68:1:0 73:2:0 74:5:0 77:4:0 81:0:0 84:4:0 84:5:0 148:1:0 148:4:0 149:3:0 160:4:0 206:8:0
+14	papa	pai	pai	18	22:1:0 23:2:0 26:4:0 89:4:0 95:2:0 98:4:0 101:3:0 111:5:0 115:2:0 120:5:0 123:3:0 125:4:0 130:9:0 131:5:0 131:7:0 139:1:0 140:1:0 143:4:0
+15	ry	NCM	NCM	18	23:3:1 38:1:1 48:2:1 55:2:1 57:1:1 76:2:4 138:1:1 140:4:1 151:2:1 158:1:1 159:0:2 167:2:1 175:1:1 177:2:1 188:2:1 190:2:1 195:1:1 205:2:1
+16	ty	comp	comp	18	8:0:0 102:1:0 105:4:0 107:2:0 108:3:0 121:4:0 123:2:0 124:3:0 125:3:0 129:4:0 131:2:0 132:9:0 133:2:0 134:3:0 137:4:0 142:5:0 178:1:0 205:5:0
+17	a	para_por	para_por	17	5:4:0 21:5:0 23:4:0 88:2:0 121:2:0 125:5:0 131:4:0 134:4:0 139:6:0 160:2:0 168:2:0 168:4:0 177:5:0 182:4:0 183:3:0 184:4:0 220:3:0
+18	ywy	eu	eu	17	3:3:0 4:3:0 5:2:0 8:1:0 10:3:0 12:5:0 13:2:0 16:2:0 17:1:0 18:1:0 19:1:0 21:2:0 23:1:0 27:6:0 59:4:0 85:3:0 124:2:0
+19	j	lSO_pos	lSO_pos	15	0:1:0 0:2:0 1:2:0 12:9:0 30:3:0 30:6:0 31:3:0 32:5:0 34:2:0 35:1:0 59:0:0 73:0:0 76:2:0 139:5:0 142:6:0
+20	kono	cunhado	cunhado	15	90:1:1 99:4:1 102:2:1 111:3:1 116:1:1 120:6:1 126:1:1 129:5:1 131:3:1 133:3:1 134:1:0 134:4:1 138:3:1 168:3:1 169:2:0
+21	ropa	de_novo	de_novo	15	54:3:0 77:2:0 106:3:0 130:2:0 143:3:0 155:2:0 162:4:0 190:3:0 194:4:0 205:3:0 205:6:0 206:2:0 207:2:0 209:2:0 210:2:0
+22	t	comp	comp	15	49:0:0 53:2:0 82:2:0 93:2:0 93:4:0 118:2:0 138:2:0 139:3:0 140:2:0 160:0:0 161:1:0 182:2:0 184:2:0 206:1:0 220:5:0
+23	toto	grupo	grupo	15	44:3:0 91:2:0 106:4:0 111:2:0 112:2:0 113:1:0 113:3:0 117:3:0 118:7:0 121:5:0 122:4:0 130:3:0 132:3:0 145:10:0 204:3:0
+24	a	dizer	dizer	14	40:0:1 43:4:1 68:0:0 99:1:0 100:3:0 132:7:0 163:2:1 165:0:1 166:3:1 172:2:0 179:4:1 192:0:1 199:6:1 202:3:1
+25	a	ser_estar	ser_estar	14	0:1:1 12:9:1 30:6:1 31:3:1 32:5:1 66:4:0 82:3:0 118:3:0 145:3:0 145:5:0 164:2:2 179:3:1 186:1:0 199:3:0
+26	eh	ficar	ficar	14	17:0:0 27:5:0 34:2:1 36:2:0 44:2:0 59:3:1 78:2:0 79:2:0 83:1:0 85:2:0 143:2:1 148:2:0 174:5:1 211:3:0
+27	se	contPT	contPT	14	4:2:1 12:4:1 17:0:1 18:0:1 27:5:1 36:2:1 44:2:1 46:2:1 78:2:1 79:2:1 83:1:1 85:2:1 145:7:1 148:2:1
+28	a	3pos	3pos	13	38:0:0 45:2:0 90:1:0 99:4:0 102:2:0 111:3:0 116:1:0 120:6:0 126:1:0 129:5:0 133:3:0 138:3:0 168:3:0
+29	kyn	3pS	3pS	13	2:3:0 20:2:0 22:2:0 45:1:0 47:2:0 52:2:0 73:3:0 80:3:0 155:1:0 156:1:0 196:4:0 197:1:0 216:1:0
+30	poko	relativo_a	relativo_a	13	0:3:0 26:3:0 26:7:0 33:4:0 34:3:0 35:2:0 68:2:0 75:3:0 76:3:0 87:4:0 147:2:0 215:3:0 219:3:0
+31	repe	frust	frust	13	89:5:0 108:5:0 119:3:0 150:5:0 153:4:0 160:3:0 161:2:0 162:6:0 163:3:0 165:1:0 166:4:0 167:9:0 170:1:0
+32	rokẽ	só	só	13	28:2:0 33:1:0 75:1:0 87:1:0 115:1:0 121:3:0 130:8:0 146:2:0 173:3:0 186:2:0 212:1:0 219:1:0 220:4:0
+33	pata	aldeia	aldeia	12	3:4:0 50:2:0 51:1:0 66:3:0 69:3:0 70:5:0 71:4:0 90:4:0 122:1:0 130:4:0 195:3:0 209:3:0
+34	moroto	lá	lá	11	27:4:0 44:1:0 46:1:0 71:1:0 78:1:0 79:1:0 86:3:0 189:1:0 196:3:0 216:3:0 218:2:0
+35	oeh	vir	vir	11	35:1:1 39:2:1 42:2:1 50:1:1 55:2:0 56:0:1 59:0:1 62:2:0 84:1:0 194:3:1 205:2:0
+36	rokene	somente	somente	11	3:6:0 12:3:0 12:7:0 23:8:0 74:6:0 116:4:0 144:1:0 166:2:0 214:2:0 215:1:0 218:3:0
+37	htao	quando	quando	10	0:1:2 12:9:2 30:6:2 31:3:2 32:5:2 66:4:1 82:3:1 96:1:1 118:3:1 145:5:1
+38	ry	pos	pos	10	0:2:4 2:0:4 35:1:4 59:0:2 64:2:1 65:1:1 73:0:4 125:2:1 130:7:1 142:1:1
+39	mety	tanga	tanga	9	124:0:1 125:7:1 128:0:1 129:1:1 130:10:0 131:6:1 132:5:1 139:2:0 142:3:0
+40	orih	morrer	morrer	9	20:2:1 21:4:0 22:2:1 23:3:0 26:2:0 26:5:0 38:0:1 45:2:1 80:3:1
+41	ro	mesmo	mesmo	9	4:1:1 12:11:0 36:4:1 83:0:1 105:1:0 159:4:1 164:0:1 166:1:0 202:2:1
+42	arimi	macaco	macaco	8	89:1:0 92:1:0 93:1:0 94:1:0 95:4:0 107:1:0 109:2:0 145:6:0
+43	exi	estar	estar	8	2:3:1 29:3:0 108:1:1 120:4:0 129:3:1 162:5:1 196:4:1 219:4:1
+44	topo	NCM	NCM	8	0:2:2 26:2:1 26:5:1 34:2:2 35:1:2 73:0:2 88:4:1 147:1:1
+45	To	puxa	puxa	7	7:0:0 41:0:0 97:0:0 104:0:0 127:0:0 135:1:0 141:0:0
+46	exiryke	porque_é	porque_é	7	9:3:0 60:2:0 61:2:0 175:5:0 179:6:0 208:3:0 212:4:0
+47	ne	tnsPdist	tnsPdist	7	1:2:2 6:2:1 20:2:2 22:2:2 24:3:2 28:3:2 29:3:1
+48	uo	matar	matar	7	9:2:1 93:4:1 157:1:1 159:0:1 160:0:1 161:1:1 162:1:1
+49	wo	matar	matar	7	6:2:0 12:1:0 31:4:1 32:2:0 72:4:0 89:2:0 145:7:0
+50	Moroto	lá	lá	6	3:0:0 51:0:0 52:0:0 70:0:0 85:0:0 152:0:0
+51	Yna	Nós	Nós	6	65:0:0 79:0:0 175:0:0 204:0:0 207:0:0 216:0:0
+52	nase	está	está	6	26:9:0 33:2:0 35:4:0 76:1:0 87:2:0 137:3:0
+53	pona	para	para	6	50:3:0 69:4:0 84:6:0 122:2:0 130:5:0 195:4:0
+54	ro	ainda	ainda	6	4:6:0 12:8:0 14:3:0 60:1:1 145:2:0 167:7:0
+55	sero	esta	esta	6	26:8:0 33:3:0 34:4:0 35:3:0 55:5:0 87:5:0
+56	Enara	assim	assim	5	33:0:0 75:0:0 87:0:0 215:0:0 219:0:0
+57	Ṽpo	velho	velho	5	30:4:1 35:1:3 73:0:3 76:2:3 147:1:2
+58	arimi	guamba	guamba	5	32:1:0 153:1:0 181:5:0 182:1:0 211:1:0
+59	itamurume	muitos	muitos	5	18:2:0 52:3:0 61:1:0 175:4:0 204:4:0
+60	kene	IPT	IPT	5	43:4:2 68:0:1 172:2:1 179:4:2 192:0:2
+61	n	3pS	3pS	5	39:2:0 42:2:0 100:5:0 108:1:0 134:2:0
+62	no	IPT	IPT	5	39:2:2 42:2:2 133:6:1 134:2:3 217:3:1
+63	se	ccmp	ccmp	5	59:3:2 98:3:2 99:3:2 117:2:2 121:4:2
+64	se	purpM	purpM	5	72:4:1 89:2:1 95:5:1 147:0:1 150:1:1
+65	Onoky	quem	quem	4	13:0:0 39:0:0 98:0:0 202:0:0
+66	Ṽ	POS	POS	4	130:10:1 131:6:2 132:5:2 139:2:1
+67	aja	mamãe	mamãe	4	20:1:0 21:3:0 27:1:0 28:4:0
+68	eh	surpresa	surpresa	4	46:2:0 114:2:1 117:2:1 136:1:0
+69	esety	nome	nome	4	2:1:0 51:2:0 73:1:0 149:1:0
+70	kaikuxi	onça	onça	4	88:1:0 96:2:0 109:1:0 114:3:0
+71	ke	pos	pos	4	40:0:2 124:0:2 128:0:2 129:1:2
+72	kohmã	anoitecer	anoitecer	4	174:1:1 176:1:1 178:1:1 179:5:1
+73	kuao	na_água	na_água	4	1:1:0 34:1:0 43:3:0 148:5:0
+74	kynako	disse	disse	4	170:0:0 198:0:0 200:1:0 203:2:0
+75	maro	com	com	4	28:1:0 29:2:0 30:2:0 31:2:0
+76	me	DESC	DESC	4	0:0:1 111:4:2 145:1:1 160:5:0
+77	me	como	como	4	72:6:1 125:7:2 130:10:2 214:1:2
+78	moe	longe	longe	4	4:1:0 36:4:0 60:1:0 114:1:0
+79	moro	aquele/a	aquele/a	4	70:4:0 72:1:0 75:2:0 87:3:0
+80	nyh	dormir	dormir	4	24:3:1 28:3:1 70:3:1 217:3:0
+81	onuh	subir	subir	4	63:2:0 95:1:1 103:1:1 207:1:0
+82	roropa	também	também	4	26:6:0 120:7:0 172:1:0 185:4:0
+83	samo	semelhante	semelhante	4	9:1:0 13:1:0 15:2:0 216:2:0
+84	se	desej	desej	4	59:1:0 105:4:2 109:3:0 162:3:2
+85	to	conp	conp	4	3:1:0 95:1:0 111:1:0 214:3:0
+86	toh	grupo	grupo	4	105:5:0 108:4:0 110:2:0 119:2:0
+87	tou	pl_IPT	pl_IPT	4	164:2:3 179:3:2 191:1:2 197:3:1
+88	ynara	assim	assim	4	123:1:0 131:1:0 132:1:0 133:1:0
+89	Kaikuxi	onça	onça	3	105:0:0 133:4:0 137:0:0
+90	PO	no_na	no_na	3	70:6:0 71:5:0 71:7:0
+91	Ṽko	contASP	contASP	3	100:3:1 132:7:1 164:1:1
+92	Ṽpo	expirado	expirado	3	0:2:3 2:0:3 122:1:1
+93	ahno	gente	gente	3	72:5:0 88:3:0 196:1:0
+94	aorihtyamo	finado	finado	3	155:3:0 168:1:0 171:3:0
+95	e	3	3	3	93:5:0 96:4:0 107:3:0
+96	eh	estar_ficar	estar_ficar	3	0:2:1 4:2:0 10:2:1
+97	ekahma	seguir	seguir	3	88:4:0 110:1:1 133:6:0
+98	enuru	nascer	nascer	3	1:2:1 2:0:1 3:1:1
+99	eporehka	chegar	chegar	3	122:3:1 179:1:0 193:1:1
+100	eta	ouvir	ouvir	3	96:3:1 101:0:0 171:1:1
+101	htao	se	se	3	120:1:1 186:1:1 199:3:1
+102	ikure	rio_abaixo	rio_abaixo	3	77:3:0 82:5:0 193:3:0
+103	iporiry	igarapé	igarapé	3	118:1:0 118:4:0 121:1:0
+104	ka	dizer	dizer	3	98:3:1 99:3:1 124:3:1
+105	kahpyry	feio	feio	3	3:2:0 30:5:0 154:1:0
+106	ke	PT	PT	3	163:2:2 165:0:2 166:3:2
+107	ke	com_inst	com_inst	3	5:6:0 145:9:0 146:1:1
+108	naka	para	para	3	77:3:1 82:5:1 193:3:1
+109	os	reflx_se	reflx_se	3	91:1:1 138:2:1 140:2:1
+110	oxiroh	febre	febre	3	12:4:0 18:0:0 19:0:1
+111	pihpo	pele	pele	3	125:2:0 130:7:0 142:1:0
+112	poeto	criança	criança	3	0:0:0 30:4:0 145:1:0
+113	pore	chegar	chegar	3	37:1:0 167:5:0 177:7:0
+114	reh	expectativo	expectativo	3	100:4:0 186:3:0 217:1:0
+115	ru	pos	pos	3	63:2:1 204:1:1 207:1:1
+116	ry	NOM	NOM	3	37:2:1 153:2:1 162:3:1
+117	ry	subjunct	subjunct	3	120:4:1 120:9:1 129:3:2
+118	se	compASP	compASP	3	92:2:2 93:2:2 93:4:2
+119	se	conp	conp	3	108:3:2 114:2:2 132:9:2
+120	tomo	coletivo	coletivo	3	31:8:0 45:3:0 66:10:0
+121	tuhke	muitos	muitos	3	70:1:0 74:1:0 137:1:0
+122	ty	ccmp	ccmp	3	5:1:0 132:2:0 179:5:0
+123	ty	desc	desc	3	124:0:0 128:0:0 129:1:0
+124	tãkye	feliz	feliz	3	10:1:0 143:1:0 150:3:0
+125	wewe	árvore	árvore	3	125:1:0 129:0:0 130:6:0
+126	xine	plRel	plRel	3	92:4:0 93:6:0 107:4:0
+127	zumo	grande	grande	3	4:4:0 32:4:0 208:2:0
+128	Awihwi	irmão_mais_velho	irmão_mais_velho	2	28:0:0 172:3:0
+129	Morararo	mesma_coisa	mesma_coisa	2	23:0:0 116:0:0
+130	Papa	pai	pai	2	5:3:0 145:0:0
+131	Sero	esta	esta	2	76:0:0 88:0:0
+132	Totahke	saboroso	saboroso	2	185:0:0 186:0:0
+133	Tuaro	saber	saber	2	21:0:0 36:0:0
+134	Ṽpyry	PTPOS	PTPOS	2	26:2:2 26:5:2
+135	Yrcme	mas	mas	2	109:0:0 121:0:0
+136	ae	pela	pela	2	206:7:0 206:9:0
+137	amorepa	ensinar	ensinar	2	92:2:1 155:1:1
+138	aorihtyã	finado	finado	2	52:1:0 66:9:0
+139	aro	levar	levar	2	53:2:1 139:3:1
+140	ase	aux	aux	2	100:5:1 128:2:1
+141	dup	***	***	2	134:1:1 169:2:1
+142	ekureh	falhar	falhar	2	179:2:0 213:2:1
+143	emah	mãoPos	mãoPos	2	115:3:0 116:2:0
+144	eny	mãe	mãe	2	139:5:1 142:6:1
+145	erery	figado	figado	2	181:6:0 184:1:0
+146	eroh	trabalhar	trabalhar	2	73:0:1 76:2:1
+147	esahpyo	ausência	ausência	2	27:3:0 28:5:0
+148	eseka	morder	morder	2	120:3:1 120:8:1
+149	esẽ	dono	dono	2	80:2:0 82:1:0
+150	exi	ser	ser	2	73:3:1 215:4:1
+151	ezuh	responder	responder	2	154:2:1 156:1:1
+152	hko	avaliar	avaliar	2	14:2:0 98:1:0
+153	hxo	aument	aument	2	105:1:1 167:7:1
+154	itu	floresta	floresta	2	217:2:0 220:2:0
+155	jy	lS_0_pos	lS_0_pos	2	24:3:0 70:3:0
+156	kakoxi	para_cima	para_cima	2	95:3:0 103:2:0
+157	kana	peixe	peixe	2	31:6:0 61:3:0
+158	kanawa	canoa	canoa	2	206:5:0 208:1:0
+159	ke	razão	razão	2	138:1:2 140:4:2
+160	kene	DPT	DPT	2	199:6:2 202:3:2
+161	ko	imp	imp	2	132:6:2 136:1:2
+162	komo	grupo	grupo	2	43:1:0 43:3:2
+163	kuaka	para	para	2	55:6:0 118:5:0
+164	m	VOCÊ	VOCÊ	2	128:2:0 129:3:0
+165	mahna	está	está	2	186:6:0 217:4:0
+166	moro	aquele//a	aquele//a	2	215:2:0 219:2:0
+167	mya	longe	longe	2	151:4:0 179:0:0
+168	ooeh	vir	vir	2	93:2:1 206:1:1
+169	osema	caminho	caminho	2	111:4:0 167:6:0
+170	oturupo	perguntar	perguntar	2	168:5:1 197:1:1
+171	parahta	balata	balata	2	72:3:0 74:3:0
+172	pitiko	pequena	pequena	2	12:6:0 180:2:0
+173	pitiko	um_pouco	um_pouco	2	49:1:0 86:1:0
+174	po	caus	caus	2	53:2:2 132:6:1
+175	po	noá	noá	2	54:5:0 115:3:1
+176	poko	occupar_com	occupar_com	2	48:3:0 211:2:0
+177	popyra	mal	mal	2	185:3:0 187:2:0
+178	puru	assar	assar	2	181:7:0 183:1:1
+179	roke	só	só	2	67:1:0 85:1:0
+180	s	12S	12S	2	164:2:0 191:1:0
+181	sasaka	eminente	eminente	2	117:1:1 119:1:1
+182	t	ccmp	ccmp	2	9:2:0 92:2:0
+183	t	obj	obj	2	159:0:0 162:1:0
+184	tapyi	casa	casa	2	180:1:0 181:1:0
+185	tiko	pouquinho	pouquinho	2	156:2:0 159:1:0
+186	to	Pl	Pl	2	26:1:0 27:2:0
+187	to	camp	camp	2	10:2:0 117:2:0
+188	to	pl	pl	2	130:1:0 136:1:1
+189	tohme	para	para	2	132:4:2 181:7:1
+190	toiro	uma	uma	2	24:4:0 218:1:0
+191	tuaro	saber	saber	2	23:5:0 38:2:0
+192	ty	compl	compl	2	98:3:0 99:3:0
+193	tyã	pl_nom	pl_nom	2	38:0:2 45:2:2
+194	tõ	tiro	tiro	2	66:5:0 66:6:0
+195	tõsẽ	carne	carne	2	186:5:0 202:1:0
+196	urakana	caçar	caçar	2	147:0:0 150:1:0
+197	xiaro	para_cá	para_cá	2	62:3:0 84:2:0
+198	xihxi	senhora	senhora	2	29:1:0 30:1:0
+199	xita	chorar	chorar	2	117:1:0 119:1:0
+200	xípo	depois_de	depois_de	2	12:1:1 162:1:2
+201	y	meu	meu	2	15:1:0 131:6:0
+202	ya	para//por	para//por	2	92:3:1 93:5:1
+203	ya	para_por	para_por	2	96:4:1 107:3:1
+204	yna	nos	nos	2	133:5:0 159:3:0
+205	ypy	montanha	montanha	2	177:1:0 177:8:0
+206	z	dele	dele	2	108:2:0 214:1:0
+207	5	cinco	cinco	1	174:3:0
+208	Aja	mamãe!	mamãe!	1	26:0:0
+209	Arimi	guamba	guamba	1	161:0:0
+210	Arypyra	nada	nada	1	154:0:0
+211	Axi	rápido	rápido	1	111:0:0
+212	Ehmaropa	vamos_todos	vamos_todos	1	163:0:0
+213	Inikahpozakoxi	rio_acima	rio_acima	1	64:0:0
+214	Iporiry	igarapé	igarapé	1	120:0:0
+215	Ka	dizer_fazer	dizer_fazer	1	100:0:0
+216	Kae	alto	alto	1	96:0:0
+217	Kure	bom	bom	1	60:0:0
+218	Mokyro	aquele/a	aquele/a	1	12:0:0
+219	Morara	semelhante	semelhante	1	138:0:0
+220	Morotoino	depois	depois	1	150:0:0
+221	Mose	este//a	este//a	1	200:0:0
+222	Mya	longe	longe	1	193:0:0
+223	Naeroro	Por_isso	Por_isso	1	62:0:0
+224	Omise	ccm_fome	ccm_fome	1	197:2:0
+225	Omise	com_fome	com_fome	1	199:0:0
+226	Onokyro	bicho	bicho	1	61:0:0
+227	Otara	o_que_é_que	o_que_é_que	1	99:0:0
+228	Otarame	talvez	talvez	1	15:0:0
+229	Otoko	onde	onde	1	191:0:0
+230	Otuh	comer	comer	1	201:0:0
+231	Pakira	caititu	caititu	1	203:0:0
+232	Pata	aldeia	aldeia	1	149:0:0
+233	Pitiko	um_pouco	um_pouco	1	119:0:0
+234	Popyra	mal	mal	1	217:0:0
+235	Pore	chegar	chegar	1	195:0:0
+236	Pore	chegou	chegou	1	57:0:0
+237	Pyra	neg	neg	1	70:2:0
+238	Se	aqui	aqui	1	67:0:0
+239	Seromaroro	agora_mesrno	agora_mesrno	1	146:0:0
+240	Sã	amanhecer	amanhecer	1	189:0:0
+241	Tah	se_perder	se_perder	1	220:0:0
+242	Taky	arco	arco	1	115:0:0
+243	Tano	aqui	aqui	1	166:0:0
+244	Taro	aqui	aqui	1	108:0:0
+245	To	atirar	atirar	1	158:0:0
+246	Toiro	una	una	1	53:0:0
+247	Tomeseke	com_cuidado	com_cuidado	1	136:0:0
+248	Toro	chamas	chamas	1	71:6:0
+249	Tuhke	muitos	muitos	1	86:0:0
+250	Tõ	comer	comer	1	213:0:0
+251	Ukuh	tentar	tentar	1	218:0:0
+252	Ṽ	NOM	NOM	1	43:3:1
+253	ṼVko	cont	cont	1	99:1:1
+254	Ṽe	DESC	DESC	1	142:3:2
+255	Ṽpyry	***	***	1	88:4:2
+256	Ṽpyry	pretPos	pretPos	1	34:2:3
+257	Wewe	árvore	árvore	1	142:0:0
+258	Yna	nosso/a	nosso/a	1	82:0:0
+259	Ynara	assim	assim	1	144:0:0
+260	Yrome	mas	mas	1	171:0:0
+261	Ywy	eu	eu	1	172:0:0
+262	Zuaro	saber	saber	1	16:0:0
+263	Zumo	grande	grande	1	14:0:0
+264	a	GenPr	GenPr	1	96:1:0
+265	ahno	cozinhar	cozinhar	1	42:0:0
+266	akuruhta	adoecer	adoecer	1	52:2:1
+267	ameke	longe	longe	1	66:1:0
+268	amo	cobrir	cobrir	1	180:3:1
+269	anumma	subir	subir	1	177:2:0
+270	apiaka	dividir	dividir	1	152:1:2
+271	aporo	brevemente	brevemente	1	49:2:0
+272	apoto	fogo	fogo	1	181:3:0
+273	arakapusa	espingarda	espingarda	1	146:1:0
+274	at	reflex	reflex	1	152:1:1
+275	atakíma	arrumar	arrumar	1	47:2:1
+276	atarypo	apressar	apressar	1	175:1:0
+277	atãkyema	regozijar	regozijar	1	11:0:1
+278	awihwi	irmão_mais_velho	irmão_mais_velho	1	24:1:0
+279	awihwi	irrnão_mais_velho	irrnão_mais_velho	1	172:4:0
+280	axi	rapido	rapido	1	208:0:0
+281	axi	rápido	rápido	1	106:1:0
+282	axí	com_pressa	com_pressa	1	48:0:0
+283	e	ele	ele	1	92:3:0
+284	e	reflx	reflx	1	134:2:1
+285	ehma	forquilha	forquilha	1	94:5:0
+286	ehpi	beira	beira	1	194:2:0
+287	ekaro	dar	dar	1	214:3:1
+288	ekepyry	defunto	defunto	1	81:1:0
+289	ema	jogar	jogar	1	212:0:1
+290	emeh	amanhecer	amanhecer	1	191:1:1
+291	emepy	madrugada	madrugada	1	188:2:0
+292	emitapã	fome	fome	1	195:5:1
+293	emory	cume_da_montanha	cume_da_montanha	1	177:9:0
+294	enahka	acabar	acabar	1	48:2:0
+295	enakunuh	engasgou	engasgou	1	140:2:2
+296	enakünuh	engasgou	engasgou	1	138:2:2
+297	enao	junto_ccm	junto_ccm	1	24:2:0
+298	ene	ver	ver	1	140:4:0
+299	eneh	trazer	trazer	1	132:6:0
+300	eny	beber	beber	1	132:10:1
+301	epory	encontrar	encontrar	1	91:1:2
+302	epuka	cair	cair	1	118:6:1
+303	ereh	espantar	espantar	1	9:0:2
+304	etuarima	sofrer	sofrer	1	216:1:1
+305	eunohnõko	***	***	1	126:2:0
+306	exi	ficar	ficar	1	120:9:0
+307	h	enfatico	enfatico	1	187:3:0
+308	h	pergunta	pergunta	1	179:0:1
+309	hma	VOCÊ_está	VOCÊ_está	1	197:3:0
+310	hna	3Saux	3Saux	1	169:1:0
+311	hna	está	está	1	99:2:0
+312	hnao	no_meio_de	no_meio_de	1	3:5:0
+313	hnao	se_não_estivesse	se_não_estivesse	1	129:0:1
+314	hro	resposta_pos	resposta_pos	1	187:1:0
+315	htao	dentro_do	dentro_do	1	217:2:1
+316	htao	guando	guando	1	145:3:1
+317	ikapo	atraz	atraz	1	173:2:0
+318	imeipo	depois	depois	1	72:1:1
+319	imepy	outro	outro	1	90:5:0
+320	ino	de	de	1	43:0:1
+321	ipunaka	profundamente	profundamente	1	185:2:0
+322	itamurune	muitos	muitos	1	61:4:0
+323	j	3pos	3pos	1	132:10:0
+324	j	lS0_pos	lS0_pos	1	2:0:0
+325	jamihta	fortificar	fortificar	1	205:5:1
+326	jeimã	passa_verão	passa_verão	1	86:2:0
+327	juamekaro	ignorante	ignorante	1	23:7:0
+328	jy	lS_O_pos	lS_O_pos	1	28:3:0
+329	kae	alto	alto	1	94:3:0
+330	kara	Não_é	Não_é	1	48:0:1
+331	keh	cess	cess	1	195:5:2
+332	keh	query	query	1	39:1:0
+333	kene	amelior	amelior	1	163:1:0
+334	ko	IMP	IMP	1	201:0:2
+335	ko	inp	inp	1	101:0:1
+336	kohma	chamar	chamar	1	153:2:0
+337	konopo	chuva	chuva	1	175:3:0
+338	konõto	grande	grande	1	206:6:0
+339	kure	boa	boa	1	186:4:0
+340	kuroko	ao_longo_de	ao_longo_de	1	194:2:1
+341	kururnu	urubu	urubu	1	214:0:0
+342	kynako	fez	fez	1	66:7:0
+343	m	POS	POS	1	142:3:1
+344	mana	está	está	1	81:2:0
+345	mano	está_falando	está_falando	1	199:5:0
+346	me	ccmo	ccmo	1	108:2:2
+347	me	corno	corno	1	30:4:2
+348	metyka	tirou_a_tanga	tirou_a_tanga	1	134:2:2
+349	moe	lange	lange	1	83:0:0
+350	moino	de_lá	de_lá	1	90:3:0
+351	mokaro	aqueles	aqueles	1	66:8:0
+352	moky	lá_está	lá_está	1	98:2:0
+353	mokyro	aquele	aquele	1	105:3:0
+354	mokyro	aquele//a	aquele//a	1	203:1:0
+355	moro	agueie//a	agueie//a	1	149:2:0
+356	mose	este//a	este//a	1	202:2:0
+357	mukuru	filho	filho	1	142:2:1
+358	mya	além	além	1	151:5:0
+359	mya	topico	topico	1	151:6:0
+360	nae	está	está	1	132:8:0
+361	nae	tem	tem	1	137:2:0
+362	nase	é	é	1	34:5:0
+363	no	hortativo	hortativo	1	108:1:2
+364	nomo	abandanar	abandanar	1	107:2:1
+365	nuno	lua	lua	1	53:1:0
+366	nõko	cont	cont	1	179:2:1
+367	o	pr_geral_O	pr_geral_O	1	154:2:0
+368	oh	came	came	1	108:2:1
+369	oh	carne	carne	1	214:1:1
+370	okomino	depois	depois	1	111:6:0
+371	on	3p0	3p0	1	171:1:0
+372	one	ver	ver	1	118:2:1
+373	oorih	morrer	morrer	1	82:2:1
+374	orame	horas	horas	1	174:4:0
+375	ornuhpe	saudades	saudades	1	62:1:0
+376	os	ref1x_se	ref1x_se	1	9:0:1
+377	osemazuhme	primeiro	primeiro	1	20:3:0
+378	otarame	talvez	talvez	1	15:3:0
+379	otoko	onde	onde	1	164:0:0
+380	otuh	comer	comer	1	204:1:0
+381	oturu	conversar	conversar	1	45:1:1
+382	oty	que	que	1	132:4:0
+383	otyhka	terminar	terminar	1	181:2:0
+384	otyryhka	desembarcar	desembarcar	1	209:1:1
+385	owo	se_levantar	se_levantar	1	210:1:1
+386	oximaro	juntos	juntos	1	46:5:0
+387	oze	onde	onde	1	43:0:0
+388	pahne	favor	favor	1	101:1:0
+389	pake	antigamente	antigamente	1	145:4:0
+390	pake	cedo	cedo	1	120:2:0
+391	patu	sobrinho	sobrinho	1	15:1:1
+392	pika	descascar	descascar	1	125:3:1
+393	pisarara	pequena	pequena	1	31:7:0
+394	pito	começar	começar	1	9:2:2
+395	po	na	na	1	116:2:1
+396	poe	de_lá	de_lá	1	90:6:0
+397	poetory	empregado	empregado	1	72:6:0
+398	pohto	mais_ou_menos	mais_ou_menos	1	12:12:0
+399	pona	em_cima_do	em_cima_do	1	177:10:0
+400	pona	no//a	no//a	1	209:4:0
+401	pukuro	media	media	1	193:4:1
+402	pune	caber	caber	1	159:4:0
+403	puxa	To!	To!	1	123:4:0
+404	pynoh	salvar	salvar	1	121:4:1
+405	pyra	Não_há	Não_há	1	120:1:0
+406	pyrehto	armar	armar	1	5:1:1
+407	pyrou	flecha	flecha	1	145:8:0
+408	ra	Não	Não	1	179:1:1
+409	ri	fazer	fazer	1	74:4:1
+410	roropa	tanibem	tanibem	1	46:3:0
+411	rukuh	será_que_é	será_que_é	1	42:1:0
+412	rukuh	superlativo	superlativo	1	105:2:0
+413	ry	NQM	NQM	1	21:4:1
+414	ryhpoka	desengatar	desengatar	1	95:5:0
+415	ryme	enquanto	enquanto	1	9:2:3
+416	sah	sacudir	sacudir	1	199:4:0
+417	sarome	capaz	capaz	1	171:1:2
+418	sasa	vareta	vareta	1	5:5:0
+419	se	amelior	amelior	1	101:0:2
+420	se	camp	camp	1	179:5:2
+421	se	campASP	campASP	1	89:3:2
+422	se	canp	canp	1	140:2:3
+423	se	ccmpASP	ccmpASP	1	90:2:2
+424	se	ccnpASP	ccnpASP	1	91:1:3
+425	se	coni>	coni>	1	102:1:2
+426	se	conç•	conç•	1	143:2:2
+427	se	corop	corop	1	129:4:2
+428	se	corrp	corrp	1	3:1:2
+429	syt	12S	12S	1	179:3:0
+430	sã	parece	parece	1	12:2:0
+431	sõ	suando	suando	1	177:6:0
+432	t	conp	conp	1	94:2:0
+433	ta	comp	comp	1	11:0:0
+434	taka	para	para	1	167:6:1
+435	taky	arco	arco	1	116:3:0
+436	tao	dentro	dentro	1	94:5:1
+437	tiko	enfatico	enfatico	1	187:3:1
+438	to	NCM	NCM	1	154:2:2
+439	to	PL	PL	1	201:0:1
+440	to	ThemPOS	ThemPOS	1	131:3:0
+441	toh	NCM	NCM	1	211:3:1
+442	topo	N0M	N0M	1	2:0:2
+443	topo	NQM	NQM	1	76:2:2
+444	tu	camp	camp	1	167:8:0
+445	tu	comp	comp	1	183:1:0
+446	tuna	água	água	1	194:1:0
+447	ty	ThemDPos	ThemDPos	1	125:7:0
+448	ty	canp	canp	1	101:2:0
+449	ty	conp	conp	1	174:1:0
+450	ty	cornp	cornp	1	176:1:0
+451	tymoke	estragada	estragada	1	212:3:0
+452	tyse	mãe_dele	mãe_dele	1	140:3:0
+453	tã	perto	perto	1	193:4:0
+454	tõ	grupo	grupo	1	196:2:0
+455	tüta	sair	sair	1	167:8:1
+456	u	lpS3pO	lpS3pO	1	31:4:0
+457	u	meu	meu	1	142:2:0
+458	ua	dançar	dançar	1	49:0:1
+459	uahka	tirar_bucho	tirar_bucho	1	182:2:1
+460	uka	queimar	queimar	1	181:4:1
+461	ukuh	tentar	tentar	1	187:0:1
+462	wa	dançar	dançar	1	71:2:1
+463	wyi	mandioca	mandioca	1	48:1:0
+464	wãta	crescer	crescer	1	30:3:1
+465	xia	para_cá	para_cá	1	169:0:0
+466	xihpyry	feio	feio	1	1:3:0
+467	xihxi	irmã	irmã	1	31:1:0
+468	xipo	tempConj_depois	tempConj_depois	1	181:2:1
+469	y	eu	eu	1	74:4:0
+470	y	minha	minha	1	132:5:0
+471	yna	nosso/a	nosso/a	1	80:1:0
+472	ynan	13S	13S	1	215:4:0
+473	yrara	lagarto	lagarto	1	6:1:0
+474	yro	ela	ela	1	67:2:0
+475	yryh	engatou	engatou	1	94:2:1
+476	yt	***	***	1	164:2:1
+477	yty	botar_timbó	botar_timbó	1	220:5:1
+478	zaraimo	angelim	angelim	1	94:4:0
+479	zuh	cabeça	cabeça	1	111:4:1
+480	zuno	grande	grande	1	12:10:0
+481	Ü	resp	resp	1	102:0:0
+482	õ	comer	comer	1	184:2:1
+483	ü	resp	resp	1	167:4:0

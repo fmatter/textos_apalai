@@ -1,3 +1,3 @@
-* Examples: 133
-* Words: 648
-* Morphemes: 994
+* Examples: 221
+* Words: 1070
+* Morphemes: 1599
