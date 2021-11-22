@@ -16,14 +16,13 @@ class Dataset(BaseDataset):
 
     def parse_pdf(self):
 
-        line_mapping = json.load(open("etc/line_mapping.json"))
-        line_moves = json.load(open("etc/line_movements.json"))
-        line_splits = json.load(open("etc/line_splits.json"))
-        col_mapping = json.load(open("etc/col_mapping.json"))
-        unit_check = json.load(open("etc/unit_check.json"))
-        insertions = json.load(open("etc/insertions.json"))
-        replacements = json.load(open("etc/replacements.json"))
-        broken_units = json.load(open("etc/broken_units.json"))
+        line_mapping = yaml.load(open("etc/line_mapping.yml"))
+        line_moves = yaml.load(open("etc/line_movements.yml"))
+        line_splits = yaml.load(open("etc/line_splits.yml"))
+        col_mapping = yaml.load(open("etc/col_mapping.yml"))
+        insertions = yaml.load(open("etc/insertions.yml"))
+        replacements = yaml.load(open("etc/replacements.yml"))
+        broken_units = yaml.load(open("etc/broken_units.yml"))
 
         segments = pd.read_csv("etc/profile.csv")
         segment_list = [
@@ -160,9 +159,7 @@ class Dataset(BaseDataset):
             # print(len(unit_raw))
             keys = ["Primary_Text", "Analyzed_Word", "Gloss", "gramm"]
             specific_keys = {"Translated_Text": -1}
-            if id not in unit_check or unit_check[id]["initial"] != 1:
-                print(f"Input ({page}):")
-                print_partial_analysis(unit_raw, unit, keys)
+            print_partial_analysis(unit_raw, unit, keys)
 
             if unit["ID"] in line_mapping:
                 target_lines = {
@@ -243,20 +240,20 @@ class Dataset(BaseDataset):
                             col_mapping[key]
                         ].replace(a, b)
                         
-            if id not in unit_check:
-                print_example(unit)
-                check_igt(unit)
-                val = input("Is parsing good? [y]es [N]o [x] save and exit\n")
-                if val == "x":
-                    with open("etc/unit_check.json", "w") as outfile:
-                        json.dump(unit_check, outfile, indent=2)
-                    exit
-                elif val != "y":
-                    return None
-                else:
-                    if id not in unit_check:
-                        unit_check[id] = {}
-                    unit_check[id]["initial"] = 1
+            # if id not in unit_check:
+            #     print_example(unit)
+            #     check_igt(unit)
+            #     val = input("Is parsing good? [y]es [N]o [x] save and exit\n")
+            #     if val == "x":
+            #         with open("etc/unit_check.json", "w") as outfile:
+            #             json.dump(unit_check, outfile, indent=2)
+            #         exit
+            #     elif val != "y":
+            #         return None
+            #     else:
+            #         if id not in unit_check:
+            #             unit_check[id] = {}
+            #         unit_check[id]["initial"] = 1
             return unit
 
         delim = [".", ";", ",", "!", "?", "*"]
@@ -393,8 +390,6 @@ class Dataset(BaseDataset):
         df[df["Example_ID"].isin(sample_list)].to_csv(
             os.path.join("cldf", "examples.csv")
         )
-        with open("etc/unit_check.json", "w") as outfile:
-            json.dump(unit_check, outfile, indent=2)
 
     def cldf_specs(self):  # A dataset must declare all CLDF sets it creates.
         return {
