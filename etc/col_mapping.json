@@ -4,5 +4,6 @@
 	"obj": "Analyzed_Word",
 	"trans": "Translated_Text",
 	"trash": "trash",
-	"gramm": "gramm"
+	"gramm": "gramm",
+	"id": ["ID"]
 }

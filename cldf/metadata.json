@@ -9,26 +9,27 @@
     "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#Generic",
     "dc:description": "More to come.",
     "dc:identifier": "github.com/fmatter/textos_apalai",
+    "dc:source": "sources.bib",
     "dc:title": "A corpuslinguistic investigation of Koehn & Koehn's *14 textos Apalai\u0301* (1994)",
     "dcat:accessURL": "git@github.com:fmatter/textos_apalai",
     "prov:wasDerivedFrom": [
         {
-            "rdf:about": "git@github.com:fmatter/textos_apalai",
             "rdf:type": "prov:Entity",
-            "dc:created": "4046fd2",
-            "dc:title": "Repository"
+            "dc:title": "Repository",
+            "rdf:about": "git@github.com:fmatter/textos_apalai",
+            "dc:created": "485b93b"
         },
         {
-            "rdf:about": "https://github.com/glottolog/glottolog",
             "rdf:type": "prov:Entity",
-            "dc:created": "v4.4-35-gfd2a2fed71",
-            "dc:title": "Glottolog"
+            "dc:title": "Glottolog",
+            "rdf:about": "https://github.com/glottolog/glottolog",
+            "dc:created": "v4.1-1-gd7fe38cc38"
         }
     ],
     "prov:wasGeneratedBy": [
         {
             "dc:title": "python",
-            "dc:description": "3.9.5"
+            "dc:description": "3.7.7"
         },
         {
             "dc:title": "python-packages",
@@ -126,6 +127,13 @@
                     {
                         "datatype": "integer",
                         "name": "Phrase_Number"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
+                        "required": false,
+                        "separator": ";",
+                        "name": "Source"
                     },
                     {
                         "dc:description": "The sequence of words of the primary text to be aligned with glosses",
@@ -271,6 +279,9 @@
                         "datatype": "string",
                         "name": "Title"
                     }
+                ],
+                "primaryKey": [
+                    "ID"
                 ]
             },
             "url": "texts.csv"
