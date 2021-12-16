@@ -5,6 +5,7 @@ from pycldf.terms import Terms
 import numpy as np
 import scipy
 from scipy.stats import chisquare
+import matplotlib.pyplot as plt
 
 word_count = 0
 morph_count = 0
@@ -31,6 +32,11 @@ for igt in test:
 verbs = yaml.load(open("sa_verbs.json"), Loader=yaml.BaseLoader)
 counts = []
 for verb in verbs:
+    if "ID" in verb:
+        id = verb["ID"]
+    else:
+        id = "reg_sa"
+        
     verb_count = 0
     for form in verb["forms"]:
         key = ":".join(form)
@@ -41,6 +47,7 @@ for verb in verbs:
         {
             "Form": verb["form"],
             "Meaning": verb["meaning"],
+            "ID": id,
             "Count": verb_count,
         }
     )
@@ -49,7 +56,9 @@ df = pd.DataFrame.from_dict(counts)
 df["% Sa"] = df["Count"] / sum(df["Count"])
 df["% Words"] = df["Count"] / word_count
 df.sort_values("Count", ascending=False, inplace=True)
+df["High_Frequency"] = df["% Sa"] > df["% Sa"].mean()
 df.to_csv("apalai_sa_verb_stats.csv", index=False)
+
 print(
     df.to_string(
         formatters={
@@ -65,6 +74,9 @@ expected_values=np.array([avg] * len(df))
 a, b = chisquare(observed_values, f_exp=expected_values)
 print(a, b)
 
+fig, ax = plt.subplots()
+df.set_index("Form")["Count"].plot(ax=ax, kind="bar")
+plt.savefig("sa_frequency.pdf", bbox_inches="tight")
 morphs = []
 for morph, data in found_morphemes.items():
     obj, gloss = morph.split(":")

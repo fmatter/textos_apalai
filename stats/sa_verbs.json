@@ -1,5 +1,6 @@
 [
-    {"forms": [["yto", "ir"]], "meaning": "go", "form": "ɨto"},
+    {"forms": [["yto", "ir"]], "meaning": "go", "form": "ɨto",
+        "ID": "go"},
     {
         "forms": [
             ["eh", "ficar"],
@@ -10,6 +11,7 @@
         ],
         "meaning": "be-2",
         "form": "eʃi",
+        "ID": "be_2"
     },
     {
         "forms": [["at-apiaka", "reflex-dividir"]],
@@ -32,6 +34,7 @@
         ],
         "meaning": "be-1",
         "form": "a",
+        "ID": "be_1"
     },
     {"forms": [["eporehka", "chegar"]], "meaning": "arrive", "form": "e-poreʔka"},
     {"forms": [["oturupo", "perguntar"]], "meaning": "ask", "form": "ot-urupo"},
@@ -40,12 +43,14 @@
         "forms": [["oeh", "vir"], ["oepy", "vir"], ["ooeh", "vir"]],
         "meaning": "come",
         "form": "oepɨ",
+        "ID": "come"
     },
     {"forms": [["otuh", "comer"]], "meaning": "eat", "form": "ot-uʔ"},
     {"forms": [["otyhka", "terminar"]], "meaning": "finish", "form": "ot-ɨʔka"},
     {"forms": [["otyryhka", "desembarcar"]], "meaning": "land", "form": "ot-ɨrɨʔka"},
     {"forms": [["etuarima", "sofrer"]], "meaning": "suffer", "form": "e-tuarima"},
-    {"forms": [["ka", "dizer_fazer"], ["ka", "dizer"]], "meaning": "say", "form": "ka"},
+    {"forms": [["ka", "dizer_fazer"], ["ka", "dizer"]], "meaning": "say", "form": "ka",
+        "ID": "say"},
     {
         "forms": [["os-epory", "reflx_se-encontrar"]],
         "meaning": "meet",
@@ -69,7 +74,7 @@
     {
         "forms": [["os-ereh", "reflx_se-espantar"]],
         "meaning": "be_amazed",
-        "form": "os-ereh",
+        "form": "os-ereʔ",
     },
     {"forms": [["atãkyema", "regozijar"]], "meaning": "be happy", "form": "at-ankɨema"},
     {"forms": [["atakĩma", "arrumar"]], "meaning": "pack bags", "form": "at-akĩma"},
