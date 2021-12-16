@@ -16,19 +16,20 @@ class Dataset(BaseDataset):
 
     def parse_pdf(self):
 
-        line_mapping = yaml.load(open("etc/line_mapping.yml"))
-        line_moves = yaml.load(open("etc/line_movements.yml"))
-        line_splits = yaml.load(open("etc/line_splits.yml"))
-        col_mapping = yaml.load(open("etc/col_mapping.yml"))
-        insertions = yaml.load(open("etc/insertions.yml"))
-        replacements = yaml.load(open("etc/replacements.yml"))
-        broken_units = yaml.load(open("etc/broken_units.yml"))
+        line_mapping = yaml.safe_load(open("etc/line_mapping.yml"))
+        line_moves = yaml.safe_load(open("etc/line_movements.yml"))
+        line_splits = yaml.safe_load(open("etc/line_splits.yml"))
+        col_mapping = yaml.safe_load(open("etc/col_mapping.yml"))
+        insertions = yaml.safe_load(open("etc/insertions.yml"))
+        replacements = yaml.safe_load(open("etc/replacements.yml"))
+        broken_units = yaml.safe_load(open("etc/broken_units.yml"))
 
         segments = pd.read_csv("etc/profile.csv")
         segment_list = [
             {"Grapheme": x, "mapping": y}
             for x, y in dict(zip(segments["Ortho"], segments["IPA"])).items()
         ]
+        segment_list.append({"Grapheme": "-", "mapping": "-"})
         tokenizer = Tokenizer(Profile(*segment_list))
 
         texts = pd.read_csv("etc/texts.csv", index_col=0, keep_default_na=False)
@@ -36,6 +37,8 @@ class Dataset(BaseDataset):
 
         obj_corr = {
             "ê": "ẽ",
+            "í": "ĩ",
+            "c": "o",
             "~": "Ṽ",
         }
 
@@ -259,10 +262,11 @@ class Dataset(BaseDataset):
         delim = [".", ";", ",", "!", "?", "*"]
 
         def ipaify(string, obj=False):
+            string = string.replace("***", "")
             string = string.lower()
             string = unicodedata.normalize("NFD", string)
             string = string.translate({ord(x): "" for x in delim})
-            return tokenizer(string).replace(" ", "").replace("#", " ")
+            return tokenizer(string, column="mapping").replace(" ", "").replace("#", " ")
 
         parsed = {}
 
