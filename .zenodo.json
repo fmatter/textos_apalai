@@ -1,0 +1,25 @@
+{
+    "creators": [
+        {
+            "orcid": "0000-0002-2545-5154",
+            "affiliation": "University of Bern",
+            "name": "Matter, Florian"
+        }
+    ],
+
+    "license": "CC-BY-SA",
+
+    "title": "14 textos Apalaí",
+
+    "related_identifiers": [
+    {
+      "identifier": "https://github.com/fmatter/textos_apalai",
+      "relation": "isIdenticalTo",
+      "resource_type": "dataset",
+      "scheme": "url"
+    }
+    ],
+
+    "keywords": ["Apalaí"],
+
+}

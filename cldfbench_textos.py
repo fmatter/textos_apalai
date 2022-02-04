@@ -40,6 +40,7 @@ class Dataset(BaseDataset):
             "í": "ĩ",
             "c": "o",
             "~": "Ṽ",
+            "ú": "ũ"
         }
 
         gloss_corr = {
@@ -135,7 +136,7 @@ class Dataset(BaseDataset):
             ]
             if "Analyzed_Word" in ex and "Gloss" in ex:
                 obj, gloss = pad_ex(ex["Analyzed_Word"], ex["Gloss"])
-                print(obj, gloss, sep="\n")
+                # print(obj, gloss, sep="\n")
             else:
                 remaining_keys.append("Analyzed_Word")
                 remaining_keys.append("Gloss")
@@ -157,12 +158,12 @@ class Dataset(BaseDataset):
                 return None
             nr = unit_raw.pop(0).replace(label, "").strip()
             id = f"{text}-{nr}"
-            unit = {"ID": id, "Text_ID": text, "Sentence_Number": nr}
+            unit = {"ID": id, "Text_ID": text, "Sentence_Number": nr.strip("0")}
             # print(unit["ID"])
             # print(len(unit_raw))
             keys = ["Primary_Text", "Analyzed_Word", "Gloss", "gramm"]
             specific_keys = {"Translated_Text": -1}
-            print_partial_analysis(unit_raw, unit, keys)
+            # print_partial_analysis(unit_raw, unit, keys)
 
             if unit["ID"] in line_mapping:
                 target_lines = {
@@ -260,13 +261,18 @@ class Dataset(BaseDataset):
             return unit
 
         delim = [".", ";", ",", "!", "?", "*"]
-
+        puncts = [":", ";", "?"]
         def ipaify(string, obj=False):
-            string = string.replace("***", "")
-            string = string.lower()
-            string = unicodedata.normalize("NFD", string)
-            string = string.translate({ord(x): "" for x in delim})
-            return tokenizer(string, column="mapping").replace(" ", "").replace("#", " ")
+            out_string = string.replace("***", "")
+            out_string = out_string.lower()
+            out_string = unicodedata.normalize("NFD", out_string)
+            out_string = out_string.translate({ord(x): "" for x in delim})
+            for punct in puncts:
+                out_string = out_string.replace(punct, "")
+            out_string = tokenizer(out_string, column="mapping", segment_separator="", separator=" ")
+            if "�" in out_string:
+                print(out_string, string, sep="\n")
+            return out_string
 
         parsed = {}
 
@@ -289,7 +295,7 @@ class Dataset(BaseDataset):
             for text_page, total_page in page_map.items():
                 page_id = f"{text}_{text_page}"
                 parsed[text][page_id] = []
-                print(page_id)
+                # print(page_id)
                 page_pdf = os.path.join("temp", text_folder, f"{page_id}.pdf")
                 raw_text = parser.from_file(page_pdf)
                 text_file = os.path.join("temp", text_folder, f"{page_id}.txt")
@@ -328,10 +334,11 @@ class Dataset(BaseDataset):
                         parsed_unit = parse_unit(unit, text_label, text, page_id)
                         if not parsed_unit:
                             continue
-                        if page_break:
-                            print(parsed_unit, partial_unit_1)
+                        # if page_break:
+                        #     print(parsed_unit, partial_unit_1)
                         parsed_unit["page"] = text_page
                         unit_id = parsed_unit["ID"]
+                        print(unit_id)
                         if "Primary_Text" in parsed_unit:
                             parsed_unit["pnm"] = ipaify(parsed_unit["Primary_Text"])
                             if "Analyzed_Word" in parsed_unit:
@@ -384,6 +391,7 @@ class Dataset(BaseDataset):
         )
         df["Gloss"] = df["Gloss"].apply(lambda x: "\t".join(x.split(" ")))
         df.rename(columns={"trash": "Comments", "ID": "Example_ID"}, inplace=True)
+        df.drop(columns=["Comments"], inplace=True)
         df.index.name = "ID"
         df.to_csv(os.path.join("cldf", "examples_full.csv"))
         sample_list = ["ner1-008", "ner1-025"]
